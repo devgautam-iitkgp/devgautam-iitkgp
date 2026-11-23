@@ -1,0 +1,702 @@
+{
+ "checked": "2026-11-23",
+ "verified_note": "v = opened the page/repo on the checked date; s = from search results or listing sites only",
+ "categories": {
+  "official": "Official (Blender Lab + Claude connector)",
+  "server": "Free MCP servers and bridges",
+  "paid": "Paid servers",
+  "skill": "Skill packs and plugins",
+  "video": "Videos",
+  "read": "Articles and guides",
+  "research": "Research papers and benchmarks",
+  "community": "Forums, X and community",
+  "security": "Security",
+  "news": "Launch news and background"
+ },
+ "resources": [
+  {
+   "cat": "official",
+   "name": "Blender Lab MCP Server page",
+   "url": "https://www.blender.org/lab/mcp-server/",
+   "note": "Official docs + add-on install link (drag into Blender twice: 1st adds the lab repo, 2nd installs). Needs Blender 5.1+ and Allow Online Access.",
+   "v": "s"
+  },
+  {
+   "cat": "official",
+   "name": "Blender Lab repo",
+   "url": "https://projects.blender.org/lab/blender_mcp",
+   "note": "GPL-3.0+. Add-on + MCP server, ~26 tools (scene summaries, screenshots, bundled manual/API docs, Python exec, background jobs). Latest v1.0.3 (11 Sep 2026). Maintained by Blender core devs.",
+   "v": "v"
+  },
+  {
+   "cat": "official",
+   "name": "Claude Blender connector",
+   "url": "https://claude.com/connectors/blender",
+   "note": "Claude Desktop > Customize > Connectors > Blender > Add. Any plan incl. Free. Not usable from claude.ai web.",
+   "v": "s"
+  },
+  {
+   "cat": "official",
+   "name": "Anthropic tutorial (Claude Academy)",
+   "url": "https://academy.claude.com/tutorials/using-the-blender-connector-in-claude",
+   "note": "Official steps + 4 example uses. Says Blender 4.2+, but the add-on manifest requires 5.1+.",
+   "v": "v"
+  },
+  {
+   "cat": "official",
+   "name": "Claude for Creative Work announcement",
+   "url": "https://www.anthropic.com/news/claude-for-creative-work",
+   "note": "28 Apr 2026 launch of 9 creative connectors incl. Blender.",
+   "v": "s"
+  },
+  {
+   "cat": "official",
+   "name": "Official server via Claude Code",
+   "url": "https://qiita.com/zukka/items/6492cf4db31e374850e2",
+   "note": "uvx --from \"git+https://projects.blender.org/lab/blender_mcp.git#subdirectory=mcp\" blender-mcp  (plain `uvx blender-mcp` runs the COMMUNITY server: same command name).",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "MCP for Blender (ahujasid, formerly blender-mcp)",
+   "url": "https://github.com/ahujasid/mcp-for-blender",
+   "stars": "35.4k",
+   "note": "MIT. The community default. Blender 3.0+. Poly Haven, Sketchfab, Poly Pizza, Rodin, Hunyuan3D, Tripo, screenshots. Arbitrary Python on by default (safe mode opt-in). Install: claude mcp add blender uvx mcp-for-blender. Discord: discord.gg/SNqPn4TcKQ",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "blenderwright (formerly blend-ai)",
+   "url": "https://github.com/jabberwock/blend-ai",
+   "stars": "187",
+   "note": "MIT. 276 tools across 32 modules. Blender 5.2 LTS only. uvx blenderwright",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "blender-open-mcp",
+   "url": "https://github.com/dhakalnirajan/blender-open-mcp",
+   "stars": "114",
+   "note": "MIT. Local/any LLM backend: Ollama, LM Studio, llama.cpp, OpenAI-compatible (vLLM, OpenRouter, Groq...). pip install -e from clone.",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "dcc-mcp-blender",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-blender",
+   "stars": "53",
+   "note": "MIT. Add-on embeds an MCP server with typed tools (mesh, UV, rig, materials, render). Blender 4.5+. pip install dcc-mcp-blender",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "Meshwire (RFingAdam)",
+   "url": "https://github.com/RFingAdam/mcp-blender",
+   "stars": "34",
+   "note": "AGPL-3.0. 225 tools incl. sculpt, animation, AI 3D gen, MSFS content. Blender 4.2-5.2, CI on 4.5/5.2 LTS. uvx meshwire",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "blender-mcp-server (djeada)",
+   "url": "https://github.com/djeada/blender-mcp-server",
+   "stars": "24",
+   "note": "MIT. 22-27 tools (README inconsistent). Own add-on; protocol not compatible with others.",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "blender-agent (ptrthomas)",
+   "url": "https://github.com/ptrthomas/blender-agent",
+   "stars": "11",
+   "note": "No MCP: Python over HTTP (curl localhost:5656) + bundled Agent Skills. Blender 5.0+.",
+   "v": "v"
+  },
+  {
+   "cat": "server",
+   "name": "Blender MCP Plus",
+   "url": "https://glama.ai/mcp/servers/dq930e7q6b",
+   "note": "Extends the OFFICIAL add-on with a Poly Haven library; one add-on, one port. Tested on 5.2.2.",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "sandraschi/blender-mcp",
+   "url": "https://glama.ai/mcp/servers/sandraschi/blender-mcp",
+   "note": "80+ tools, .mcpb drag-in install for Claude Desktop, VRM/VRChat validation.",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "Security-hardened fork (soozs1)",
+   "url": "https://glama.ai/mcp/servers/soozs1/Blender-MCP",
+   "note": "Fork of ahujasid with telemetry removed, token auth, loopback-only binding.",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "CommonSenseMachines/blender-mcp",
+   "url": "https://github.com/CommonSenseMachines/blender-mcp",
+   "note": "CSM.ai text-to-3D, asset search, text-to-animation with auto-rig. Repo page could not be opened on check date.",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "Scenario for Blender",
+   "url": "https://www.claudemarketplace.net/mcp/blender-plugin",
+   "note": "Blender 5.0+ extension: AI images/video/3D/PBR/HDRI + local MCP server. Needs Scenario account.",
+   "v": "s"
+  },
+  {
+   "cat": "server",
+   "name": "blender-ai-mcp (ARCHIVED)",
+   "url": "https://github.com/PatrykIti/blender-ai-mcp",
+   "stars": "67",
+   "note": "Apache-2.0. README says archived/unmaintained. Listed only because older guides recommend it.",
+   "v": "v"
+  },
+  {
+   "cat": "paid",
+   "name": "Blender MCP Pro (abyo)",
+   "url": "https://blender-mcp-pro.abyo.net",
+   "note": "$5/mo or $15 one-time, 7-day trial. 110-120+ tools. Blender 3.6 LTS+. Python exec, no sandbox described; online licence check (72h cache).",
+   "v": "v"
+  },
+  {
+   "cat": "paid",
+   "name": "BlenderMCP Pro (Anvil, Superhive)",
+   "url": "https://superhivemarket.com/products/blendermcp-pro",
+   "note": "Different product from the above. v2.5.2, agent workflows, spatial checks.",
+   "v": "s"
+  },
+  {
+   "cat": "paid",
+   "name": "StraySpark Blender MCP Server",
+   "url": "https://www.strayspark.studio/products/blender-mcp-server",
+   "note": "$55.99 Personal / $174.99 Professional (Nov 2026; was $79.99-$249.99). Code exec off by default, path jails, audit log. Blender 5.1+ (5.2 LTS primary).",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "arjun988/blender-skills",
+   "url": "https://github.com/arjun988/blender-skills",
+   "stars": "4.5k",
+   "note": "MIT, v1.3.0, 94 skills + 175 refs. Game-asset pipeline: blockout to Unity/Unreal/Godot, art-style + genre direction. Entry skill: blender-director. Needs COMMUNITY server (BlenderMCP add-on). Install: git clone, copy .claude/skills into project; or /plugin marketplace add arjun988/blender-skills",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "kevinbadi/blender-skills",
+   "url": "https://github.com/kevinbadi/blender-skills",
+   "stars": "288",
+   "note": "16 skills: product shots, turntables, camera moves, Poly Haven scenes, image-to-3D (Meshy key), Three.js export. Needs community server. Blender 5.x.",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "EL4CTEO/blender-skills",
+   "url": "https://github.com/el4cteo/blender-skills",
+   "stars": "164",
+   "note": "MIT. 22 skills (search snippets claim 28 and 2.7k stars; live page showed 22/164). Pro workflows, Blender 5.2 LTS+. /plugin marketplace add EL4CTEO/blender-skills then /plugin install blender-agent-skills@blender-agent-skills",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "ra100/blender-claude-plugin",
+   "url": "https://github.com/ra100/blender-claude-plugin",
+   "stars": "11",
+   "note": "MIT. 8 skills (geometry/shader/compositing nodes, Python, rigging, modifiers, physics, rendering). Uses the OFFICIAL server; falls back to bpy scripts. claude plugin marketplace add ra100/blender-claude-plugin",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "jithinolickal/blender",
+   "url": "https://github.com/jithinolickal/blender",
+   "stars": "9",
+   "note": "Apache-2.0. 1 skill: parametric design, materials, lighting, renders + MCP troubleshooting. Community server. claude plugin marketplace add jithinolickal/blender",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "mromidev/claude-blender-skills",
+   "url": "https://github.com/mromidev/claude-blender-skills",
+   "stars": "2",
+   "note": "MIT. 3 film/animation skills (forest, car film) with real scripts; uses its own bridge.py, not MCP.",
+   "v": "v"
+  },
+  {
+   "cat": "skill",
+   "name": "scenario-labs/skills (Blender experts)",
+   "url": "https://github.com/scenario-labs/skills",
+   "note": "scenario-blender-expert router + hard-surface, rigging, sculpting skills; headless or via MCP; tests pass on 5.2.1.",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "Dev-GOM blender-toolkit",
+   "url": "https://github.com/Dev-GOM/claude-code-marketplace",
+   "note": "Experimental plugin: WebSocket control (not MCP), Mixamo retargeting. /plugin install blender-toolkit@dev-gom-plugins",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "vladmdgolam blender-mcp skill",
+   "url": "https://github.com/vladmdgolam/agent-skills",
+   "note": "When to use MCP tools vs Python; headless export. npx skills add vladmdgolam/agent-skills --skill blender-mcp",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "Hermes Agent blender-mcp skill",
+   "url": "https://tessl.io/registry/skills/github/NousResearch/hermes-agent/blender-mcp/review",
+   "note": "bpy recipes + pitfalls references; standard SKILL.md.",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "TMHSDigital/Blender-Developer-Tools",
+   "url": "https://github.com/TMHSDigital/Blender-Developer-Tools",
+   "note": "8 skills, rules, snippets for add-on dev; Blender 5.1 (4.5 LTS fallback).",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "SamuelAsherRivello/ai-skills-blender",
+   "url": "https://skillsmp.com/ar/creators/samuelasherrivello/ai-skills-blender",
+   "note": "~28 skills for editable assets via Blender MCP (image-to-model, relief).",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "rehan-remade/animated-asset-skill",
+   "url": "https://github.com/rehan-remade/animated-asset-skill",
+   "note": "One sentence to rigged animated voxel creature: fal + Hunyuan-3D + headless Blender to glTF.",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "Patch-gg/trompe",
+   "url": "https://github.com/Patch-gg/trompe",
+   "note": "Blockout in Blender, then texture with image models by projecting 128 views.",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "Other single skills",
+   "url": "https://skills.sh/terminalskills/skills/blender-scripting",
+   "note": "TerminalSkills blender-scripting (headless), alivirgo Major-AI-Skills blender, openaec-foundation (BIM/Bonsai), phuetz code-buddy, sfkislev/flue, digitalsamba video toolkit, majidmanzarpour/blender-game-skills.",
+   "v": "s"
+  },
+  {
+   "cat": "skill",
+   "name": "Lead: Rehan Sheikh 29-skill pack (patch)",
+   "url": "https://x.com/rehan_shei",
+   "note": "Announced on X (modeling, rigging, hair, sims, lighting, export); repo not yet found.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "I Tested Claude's Official Blender Connector",
+   "url": "https://www.youtube.com/watch?v=b5F-yNG4lds",
+   "note": "Aidan Stanik, 28 Apr 2026, 12 min. Official; Claude Code part at 3:14.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "How To Connect Claude To Blender (Blender MCP Setup)",
+   "url": "https://www.youtube.com/watch?v=0PdIuWlxhHA",
+   "note": "Think Tutorial, 5 min, official on Mac; FAQ in comments.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "How to Setup Blender MCP with Claude, Codex & Gemini CLI",
+   "url": "https://www.youtube.com/watch?v=YQBO5de575Y",
+   "note": "Official server with 3 clients.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "How to Connect Blender to Claude AI (Official Method)",
+   "url": "https://www.youtube.com/watch?v=WaGIc9KJRwE",
+   "note": "Official, no config files.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Claude + Blender (Free MCP Setup): Build 3D Scenes",
+   "url": "https://m.youtube.com/watch?v=rohl0_7cZc8",
+   "note": "Nov 2026. Community server, 3 builds with code on 5.3, safety settings.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Create 3D with Claude AI with Blender MCP (26 min)",
+   "url": "https://www.youtube.com/watch?v=lCyQ717DuzQ",
+   "note": "DesignCode, Mar 2025. Classic community-server walkthrough.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Claude en Blender: con y sin 22 skills",
+   "url": "https://www.youtube.com/watch?v=VWEa-zeL2fY",
+   "note": "Spanish. Same prompt with vs without skills.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Can Claude Animate Characters in Blender?",
+   "url": "https://www.youtube.com/watch?v=qhi9A_j-1Gc",
+   "note": "Animation test.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "I Used Claude AI to Rig a Car in Blender",
+   "url": "https://www.youtube.com/watch?v=e_s84dETgKA",
+   "note": "Rigging over MCP.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "3D Modeling with Claude Code: A Practical Blender Workflow",
+   "url": "https://www.youtube.com/watch?v=4cReMIc1qgQ",
+   "note": "Claude Code as agent controller.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Turn Claude Code into a 3D Animator",
+   "url": "https://www.youtube.com/watch?v=f2yPoquP77g",
+   "note": "Animated videos from prompts.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Claude Code builds your 3D scene: the 4 free pieces",
+   "url": "https://www.youtube.com/shorts/aH3_Vgn5Qjc",
+   "note": "Short: Blender + MCP for Blender + arjun988 skills setup.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "More videos",
+   "url": "https://www.youtube.com/watch?v=0kMhtqYBe4Y",
+   "note": "Also: 2Ardi_JpgIM (2-min setup), l7AHwQSyeK8, GFtIO3U6qcI (Spanish official), Ci9Xc-VPc04, kdYfEudqpis (Roblox), cGxweONcSUY (Korean CAD), PBSvqfx4gwQ (Windows), demos DqgKuLYUv00 / I29rn92gkC4 / FDRb03XPiRo.",
+   "v": "s"
+  },
+  {
+   "cat": "video",
+   "name": "Udemy: Automation with Claude AI for Creative Work",
+   "url": "https://www.udemy.com/course/automation-with-claude-ai-for-creative-work/",
+   "note": "Paid course: Blender MCP setup, product animation, skill-based image-to-3D pipeline.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "How to Connect Claude to Blender (Tested) — MeltFlex",
+   "url": "https://www.meltflexai.com/blog/connect-claude-to-blender",
+   "note": "Best single read: both servers on real briefs, time + cost (~$0.7/brief), fix list.",
+   "v": "v"
+  },
+  {
+   "cat": "read",
+   "name": "What It Can and Can't Do — MindStudio",
+   "url": "https://www.mindstudio.ai/blog/claude-blender-mcp-real-world-performance",
+   "note": "Good: blockouts, batch scripts, hard-surface. Weak: organic, topology, rigging, complex nodes.",
+   "v": "v"
+  },
+  {
+   "cat": "read",
+   "name": "Blender MCP Servers Compared — StraySpark",
+   "url": "https://www.strayspark.studio/blog/official-blender-mcp-server-comparison-2026",
+   "note": "Tools, prices, exec defaults, official release history. Vendor-biased.",
+   "v": "v"
+  },
+  {
+   "cat": "read",
+   "name": "Official vs community + setup — Voyager",
+   "url": "https://voyager.so/blog/blender-mcp",
+   "note": "Oct 2026 stats; devtalk security debate summary.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Claude Code + official MCP desk build (Japanese) — Qiita",
+   "url": "https://qiita.com/zukka/items/6492cf4db31e374850e2",
+   "note": "Blender 5.1.2. Explains the official/community name clash and pitfalls.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Official connector on Desktop + Code — Classmethod",
+   "url": "https://dev.classmethod.jp/en/articles/claude-blender-connector-desktop-and-code/",
+   "note": "Add-on v1.0.0 hands-on, `claude mcp list` check.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Blender MCP with Claude Code — mcp.so",
+   "url": "https://mcp.so/blog/blender-mcp-claude-code-setup",
+   "note": "--scope user, /mcp check, common errors.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Blender MCP knowledge base — Blender Visual Investigation",
+   "url": "https://blendervisualinvestigation.com/knowledge-base/docs/addons/blender-mcp/",
+   "note": "Servers compared by privacy posture.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Blender Skills 94-pack review — ThakiCloud",
+   "url": "https://thakicloud.com/tech-blog/en/agentops/blender-skills-agent/",
+   "note": "Independent check of arjun988 claims.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "blender-mcp_experiments — b2renger",
+   "url": "https://github.com/b2renger/blender-mcp_experiments",
+   "note": "Full tutorial: architecture, uv, troubleshooting table, Ollama.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Chinese tutorials (CSDN, runoob)",
+   "url": "https://www.runoob.com/ai-agent/ai-3d-blender.html",
+   "note": "Also deepseek.csdn.net MCP for Blender guide; runoob has a good troubleshooting list.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Japanese (Zenn)",
+   "url": "https://zenn.dev/yuichi_ai/articles/2d689e5f848068",
+   "note": "Internals of the community server; also zenn.dev/yurinchi (Godot + Blender MCP game).",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Meshy + Blender MCP guide",
+   "url": "https://www.meshy.ai/tutorials/blender-mcp-guide",
+   "note": "Vendor: official server + Meshy asset generation.",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Best MCP servers for game dev 2026 — Sprixen",
+   "url": "https://sprixen.com/blog/best-mcp-servers-for-game-development-2026",
+   "note": "Ranking with API-read stars (1 Nov 2026).",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "best-of-mcp-servers",
+   "url": "https://github.com/tolkonepiu/best-of-mcp-servers",
+   "note": "Weekly-ranked MCP list (Art & Culture section).",
+   "v": "s"
+  },
+  {
+   "cat": "read",
+   "name": "Top Claude skills for 3D and game dev — Snyk",
+   "url": "https://snyk.io/articles/top-claude-skills-3d-modeling-game-dev-shader-programming",
+   "note": "Skills vs MCP explained; install paths; review skills before installing.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "BlenderGym (CVPR 2025)",
+   "url": "https://arxiv.org/abs/2504.01786",
+   "note": "Benchmark: even top VLMs struggle on edits easy for novice Blender users; split compute between generation and verification.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "SceneCraft (ICML 2024)",
+   "url": "https://arxiv.org/abs/2403.01248",
+   "note": "Text to Blender code via scene graph + constraint solver + VLM self-critique + learned function library.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "BlenderAlchemy",
+   "url": "https://arxiv.org/abs/2404.17672",
+   "note": "VLM-guided editing of materials/lighting programs.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "LL3M: Large Language 3D Modelers",
+   "url": "https://arxiv.org/abs/2508.08228",
+   "note": "Multi-agent plan/retrieve/write/debug/refine of Blender scripts for assets.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "VIGA + BlenderBench",
+   "url": "https://arxiv.org/abs/2601.11109",
+   "note": "Vision-as-inverse-graphics agent; new BlenderBench benchmark.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "3DHarnessBench",
+   "url": "https://arxiv.org/abs/2609.06535",
+   "note": "Agentic 3D-to-code benchmark; cites both Blender MCP servers.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "BlenderWorld",
+   "url": "https://arxiv.org/abs/2610.23986",
+   "note": "Benchmark for visual agents creating 3D from real-world references.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "BlenderFORGE",
+   "url": "https://arxiv.org/abs/2611.10768",
+   "note": "Optimizing reactive 3D-editing ability of MLLMs.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "SimWorlds",
+   "url": "https://arxiv.org/abs/2607.01766",
+   "note": "Multi-agent text-to-4D editable Blender projects.",
+   "v": "s"
+  },
+  {
+   "cat": "research",
+   "name": "Planner-Actor-Critic 3D modeling",
+   "url": "https://arxiv.org/abs/2601.05016",
+   "note": "Built on blender-mcp; notes MCP tool limits and script failures.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "Blender devtalk: 3D-Agent + MCP architecture thread",
+   "url": "https://devtalk.blender.org/t/3d-agent-blender-ai-assistant-built-a-multi-agent-system-on-top-of-blenders-mcp-and-python-api-and-sharing-architecture-learnings-for-the-lab-discussion/44260",
+   "note": "Developer-forum discussion with Blender devs; security debate.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "Blender devtalk: helping write the MCP",
+   "url": "https://devtalk.blender.org/t/i-would-love-to-help-write-the-mcp-for-blender-can-i-get-involved-in-that/43367",
+   "note": "Nov 2025 thread before the official server.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "BlenderArtists: connector launch thread",
+   "url": "https://blenderartists.org/t/from-blender-mcp-to-3d-agent-anthropic-partners-with-blender-claude-ai-connector-now-official/1639106",
+   "note": "Heated for/against AI debate.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "Polycount: BlenderMCP Pro pipeline thread",
+   "url": "https://polycount.com/discussion/238781/blendermcp-pro-ai-pipeline-tool-for-blender-asset-validation-batch-export-game-engine-prep",
+   "note": "Pipeline-focused discussion.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "GitHub Discussions (community server)",
+   "url": "https://github.com/ahujasid/blender-mcp/discussions",
+   "note": "Q&A and showcase.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "X: reusable modeling prompt (@rewind02)",
+   "url": "https://x.com/rewind02/status/2116918597658305001",
+   "note": "Inspect, silhouette, geometry, materials, previews, self-correct.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "X: Claude + Blender A-Z animation guide (@kirillk_web3)",
+   "url": "https://x.com/kirillk_web3/status/2114393429874479530",
+   "note": "Sandbox route vs official connector route.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "X: original launch (@sidahuj)",
+   "url": "https://x.com/sidahuj/status/1899460492999184534",
+   "note": "11 Mar 2025 dragon demo.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "X: Python 3.11 fix (@LucioFulci74)",
+   "url": "https://x.com/LucioFulci74/status/2043242029279486372",
+   "note": "\"Server disconnected\" fixed by pinning --python 3.11.",
+   "v": "s"
+  },
+  {
+   "cat": "community",
+   "name": "Reddit (not reachable by Claude tools)",
+   "url": "https://trendshift.io/repositories/74897",
+   "note": "Reddit is blocked for Claude's fetch + search. Trendshift lists arjun988 posts on r/TechnicalArtist, r/kiroIDE, r/coolgithubprojects, r/claudeskills.",
+   "v": "s"
+  },
+  {
+   "cat": "security",
+   "name": "CVE-2026-66004 (path traversal)",
+   "url": "https://nvd.nist.gov/vuln/detail/cve-2026-66004",
+   "note": "ahujasid download_polyhaven_asset; 24 Jul 2026.",
+   "v": "s"
+  },
+  {
+   "cat": "security",
+   "name": "CVE-2026-10688 / 10661 / 10662",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10688",
+   "note": "Code injection, injection, SSRF in old blender-mcp (<= 7636d13). Update to mcp-for-blender.",
+   "v": "s"
+  },
+  {
+   "cat": "security",
+   "name": "Is Blender MCP safe? — StraySpark",
+   "url": "https://www.strayspark.studio/blog/is-blender-mcp-safe-security-guide-2026",
+   "note": "10-point checklist for any server (vendor).",
+   "v": "s"
+  },
+  {
+   "cat": "news",
+   "name": "Blender Foundation: funding changed to one-time donation",
+   "url": "https://gamedev.net/news/3088-upcoming-blender-development-fund-and-ai-policies/",
+   "note": "1 May 2026, after community backlash; no gen-AI features in Blender itself.",
+   "v": "s"
+  },
+  {
+   "cat": "news",
+   "name": "CG Channel: patronage downgraded",
+   "url": "https://www.cgchannel.com/?p=175793",
+   "note": "4 May 2026 explainer.",
+   "v": "s"
+  },
+  {
+   "cat": "news",
+   "name": "MacRumors: creative connectors launch",
+   "url": "https://macrumors.com/2026/04/28/claude-creative-tool-connectors",
+   "note": "28 Apr 2026.",
+   "v": "s"
+  }
+ ],
+ "fixes": [
+  "Official add-on: Blender 5.1+ and Edit > Preferences > System > Allow Online Access",
+  "Drag the official install link in twice (1st adds repo)",
+  "Start the server in add-on prefs; enable Auto Start",
+  "Only one Blender MCP add-on enabled (most use port 9876)",
+  "Fully quit Claude Desktop (not just close window), then reopen",
+  "claude.ai web cannot connect; use Claude Desktop or Claude Code",
+  "`uvx blender-mcp` = community server; official needs uvx --from git+https://projects.blender.org/lab/blender_mcp.git#subdirectory=mcp blender-mcp",
+  "\"Server disconnected\": pin Python 3.11 (uvx --python 3.11 ...)",
+  "Install uv with its official installer, not pip; clear cache: uv cache clean blender-mcp && uvx --refresh blender-mcp",
+  "Work on copies: every server can run arbitrary Python"
+ ]
+}
