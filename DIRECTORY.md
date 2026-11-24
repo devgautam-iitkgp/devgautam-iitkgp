@@ -389,6 +389,8 @@ Every automation above ends up as one of six things. Pick the lightest one that 
 | A new capability (an API, a database, an app) | MCP server | `claude mcp add …`, stored in `~/.claude.json` or `.mcp.json` | Its tools appear to Claude |
 | A bundle to share with others | Plugin | A directory with `.claude-plugin/plugin.json`, listed in a marketplace | `/plugin marketplace add`, then `/plugin install` |
 
+**Where these load.** Personal skills (`~/.claude/skills/`), user subagents and locally installed plugins load in every Claude Code session on that computer (terminal, desktop app, VS Code), with no per-session setup. They do not load in cloud sessions (claude.ai/code) or Cowork. For those, commit the skill to the repo's `.claude/skills/` or point the session at a raw URL.
+
 ### MCP servers
 
 ```bash
@@ -420,6 +422,25 @@ description: Build the weekly sales report from the CRM export. Use when asked f
 
 Source: [Skills docs](https://code.claude.com/docs/en/skills).
 
+### Subagents
+
+```markdown
+---
+name: code-reviewer
+description: Reviews code for quality and best practices
+tools: Read, Glob, Grep
+model: sonnet
+---
+
+You are a code reviewer. Give specific, actionable feedback on quality, security and best practices.
+```
+
+Save it as `.claude/agents/code-reviewer.md` (this project) or `~/.claude/agents/` (all projects). `name` and `description` are required; the body becomes the subagent's system prompt. Claude delegates when the description fits; `@agent-code-reviewer` forces it, and `claude --agent code-reviewer` runs a whole session as it. Source: [Subagents docs](https://code.claude.com/docs/en/sub-agents).
+
+### Hooks: where they live
+
+`~/.claude/settings.json` (all your projects), `.claude/settings.json` (this project, committed), `.claude/settings.local.json` (this project, not committed), a plugin's `hooks/hooks.json`, or the frontmatter of a skill or subagent (active only while it runs). Match MCP tools by name: `mcp__<server>__<tool>`, e.g. matcher `mcp__github__.*`. Source: [Hooks guide](https://code.claude.com/docs/en/hooks-guide). The Blender directory ships a ready, tested example: `hooks/block_unsafe_blender_python.py`.
+
 ### Plugins and marketplaces
 
 A plugin is one directory: `.claude-plugin/plugin.json` plus any of `skills/`, `agents/`, `hooks/hooks.json` and `.mcp.json`. A marketplace is a repo with `.claude-plugin/marketplace.json` listing plugins.
@@ -431,6 +452,8 @@ A plugin is one directory: `.claude-plugin/plugin.json` plus any of `skills/`, `
 claude plugin install name@marketplace --scope project  # from a script
 ```
 
+Install scopes: user (every project on this computer), project (everyone in the repo, through `.claude/settings.json`) or local (you, this repo only). An enabled plugin costs context in every session: the name and description of each skill and agent it adds sit in context on every turn, even when unused, so disable plugins you don't use.
+
 Sources: [Plugins overview](https://code.claude.com/docs/en/plugins/overview), [Plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
 
 ### Worked example: this directory is a skill
@@ -440,7 +463,7 @@ git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/dev
 git -C ~/.claude/skills/claude-automation-patterns pull    # update later
 ```
 
-The branch has a `SKILL.md` at its root, so Claude Code loads it whenever automation comes up, with no link to paste. The Blender directory installs the same way (branch `blender-claude-mcp`).
+The branch has a `SKILL.md` at its root, so Claude Code loads it whenever automation comes up, with no link to paste. It is a one-time setup per computer. The Blender directory installs the same way (branch `blender-claude-mcp`).
 
 ## 11. Sources and where to keep learning
 
@@ -471,4 +494,4 @@ The branch has a `SKILL.md` at its root, so Claude Code loads it whenever automa
 
 ### Coverage
 
-Researched on November 23, 2026 from Anthropic's docs and posts, vendor docs (Zapier, n8n), GitHub and news coverage. Links re-checked on November 24, 2026 with `scripts/check_links.py`. The index is tested with `evals/questions.json` and `scripts/eval_index.py`: it scored 16/20 before section 10 was added and 20/20 after. Reddit was blocked from the research environment, so no Reddit threads are listed; r/ClaudeAI and r/ClaudeCode are worth checking yourself. Figures are as reported by their sources. Names change fast (routines became cloud scheduled tasks), so check the linked doc before you rely on a flag.
+Researched on November 23, 2026 from Anthropic's docs and posts, vendor docs (Zapier, n8n), GitHub and news coverage. Links re-checked on November 24, 2026 with `scripts/check_links.py`. The index is tested with `evals/questions.json` and `scripts/eval_index.py`: it scored 16/20 before section 10 was added and 20/20 after. The grader also fails if the index grows past its token budget. Reddit was blocked from the research environment, so no Reddit threads are listed; r/ClaudeAI and r/ClaudeCode are worth checking yourself. Figures are as reported by their sources. Names change fast (routines became cloud scheduled tasks), so check the linked doc before you rely on a flag.

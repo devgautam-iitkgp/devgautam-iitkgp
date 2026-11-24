@@ -195,6 +195,18 @@
    "verified": "2026-11-24"
   },
   {
+   "name": "Subagents docs",
+   "url": "https://code.claude.com/docs/en/sub-agents",
+   "section": 10,
+   "verified": "2026-11-24"
+  },
+  {
+   "name": "Hooks guide",
+   "url": "https://code.claude.com/docs/en/hooks-guide",
+   "section": 10,
+   "verified": "2026-11-24"
+  },
+  {
    "name": "Plugins overview",
    "url": "https://code.claude.com/docs/en/plugins/overview",
    "section": 10,

@@ -8,7 +8,7 @@ Branch `claude-automation` of devgautam-iitkgp/devgautam-iitkgp. A directory of 
 git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/claude-automation-patterns
 ```
 
-Or fetch the index directly: https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md
+One-time per computer: every local Claude Code session (terminal, desktop app, VS Code) then has it. Cloud sessions (claude.ai/code) and Cowork don't load personal skills; there, fetch the index directly: https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md
 
 | File | What it is |
 | --- | --- |
@@ -16,7 +16,7 @@ Or fetch the index directly: https://raw.githubusercontent.com/devgautam-iitkgp/
 | `AGENT_INDEX.md` | Compact index (~2.4k tokens), section pointers like [§3] |
 | `DIRECTORY.md` | Full directory, sections 0–11 |
 | `resources.json` | Every linked source with its section |
-| `evals/questions.json` | 30 test questions (10 held out) the index must answer |
+| `evals/questions.json` | 33 test questions (10 held out) the index must answer, plus a token budget |
 | `scripts/eval_index.py`, `scripts/check_links.py` | Run the evals; check every link |
 
 Quality checks: `python3 scripts/eval_index.py AGENT_INDEX.md evals/questions.json` and `python3 scripts/check_links.py resources.json`.

@@ -10,4 +10,4 @@ description: Directory of how to automate work with Claude - routes (Claude Code
 3. Flags and product names change fast. Before relying on a CLI flag or price, check the doc linked in that section.
 4. Blender-specific setup lives in the sister skill `blender-claude-mcp`.
 
-Update this skill: `git -C ~/.claude/skills/claude-automation-patterns pull`
+Loads in local Claude Code sessions only (not claude.ai/code cloud sessions or Cowork). Update this skill: `git -C ~/.claude/skills/claude-automation-patterns pull`

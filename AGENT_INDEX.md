@@ -1,6 +1,6 @@
 # AGENT INDEX — How to automate with Claude (patterns, not use cases)
 v2026-11-24 · full text: DIRECTORY.md (same folder) · machine list: resources.json
-Install as a skill (auto-loads on automation questions): git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/claude-automation-patterns
+Install as a skill, once per computer (auto-loads in every local Claude Code session; NOT in cloud/claude.ai/code or Cowork, which should fetch this file's raw URL): git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/claude-automation-patterns
 Read this first (~2.5k tokens). Open DIRECTORY.md section N only when you need detail.
 
 ## DECIDE (route)
@@ -87,10 +87,11 @@ growth marketing 30min→30s · field marketer BigQuery MCP briefings · Project
 ## PACKAGING [§10] (lightest that works)
 fact for every session → CLAUDE.md (repo root | ~/.claude/CLAUDE.md)
 repeated procedure → skill: ~/.claude/skills/<name>/SKILL.md (all projects) | .claude/skills/<name>/SKILL.md (repo); frontmatter name + description (description = trigger); /name; live reload; .claude/commands/x.md still works (merged into skills)
-isolated worker → subagent .claude/agents/<name>.md | ~/.claude/agents/
-must-always rule → hook in .claude/settings.json
+where: personal skills/agents/local plugins load in all local sessions, not cloud/Cowork (use repo .claude/skills/ there)
+isolated worker → subagent .claude/agents/<name>.md | ~/.claude/agents/; frontmatter name+description required, tools, model; @agent-<name> forces it; claude --agent <name>
+must-always rule → hook in ~/.claude/settings.json | .claude/settings.json | .claude/settings.local.json | plugin hooks/hooks.json | skill/subagent frontmatter; MCP matcher mcp__<server>__.*
 new capability → MCP: claude mcp add <name> -- <cmd> | claude mcp add --transport http <name> <url>; --scope local(default)|project(.mcp.json, git-shared)|user
-share a bundle → plugin (.claude-plugin/plugin.json + skills/ agents/ hooks/hooks.json .mcp.json); /plugin marketplace add owner/repo; /plugin install name@marketplace; claude plugin install name@mkt --scope project
+share a bundle → plugin (.claude-plugin/plugin.json + skills/ agents/ hooks/hooks.json .mcp.json); /plugin marketplace add owner/repo; /plugin install name@marketplace; claude plugin install name@mkt --scope project; scopes user|project|local; enabled plugins cost context every turn (disable unused)
 example: this branch has SKILL.md at root → git clone into ~/.claude/skills/claude-automation-patterns
 
 ## TOP SOURCES [§11]

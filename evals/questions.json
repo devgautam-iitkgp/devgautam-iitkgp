@@ -226,7 +226,29 @@
     "awesome-claude-code"
    ],
    "heldout": true
+  },
+  {
+   "id": "a21",
+   "q": "Will my personal skills load in a claude.ai/code cloud session?",
+   "must_match": [
+    "cloud"
+   ]
+  },
+  {
+   "id": "a22",
+   "q": "Force a specific subagent to run",
+   "must_match": [
+    "@agent-"
+   ]
+  },
+  {
+   "id": "a23",
+   "q": "Hook only for this repo but not committed",
+   "must_match": [
+    "settings\\.local\\.json"
+   ]
   }
  ],
- "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete."
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete.",
+ "max_tokens": 3000
 }
