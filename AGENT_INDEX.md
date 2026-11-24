@@ -1,6 +1,6 @@
 # Agent index: Blender + Claude MCP
 
-Install as a skill (auto-loads on Blender questions): git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp
+Install as a skill, once per computer (auto-loads on Blender questions in every local Claude Code session; NOT in cloud/claude.ai/code or Cowork sessions, which should fetch this file's raw URL): git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp
 
 For AI sessions: read only this file (about 3k tokens; the Start here block alone is about 250). Open DIRECTORY.md only for full notes; resources.json is the machine-readable source of truth.
 
@@ -31,7 +31,7 @@ Checked 2026-11-23; links re-checked 2026-11-24. One line per resource: name | u
 - render: `-o //renders/frame_#### -f 1` (// = next to .blend) or `-a` for animation
 - self-check: render preview PNG or community viewport screenshot -> Claude reads image, judges vs concrete criteria -> loop (evaluator-optimizer; BlenderGym: models verify worse than they generate)
 - unattended: `claude -p "<job>" --allowedTools "Bash(blender -b *),Read,Write"` via cron/Desktop scheduled task; cloud tasks/GitHub Actions only if runner installs Blender
-- guardrails: .blend copies; outputs in git; PreToolUse hook on Blender code tool (matcher like mcp__blender__.*) blocking os/subprocess/shutil
+- guardrails: .blend copies; outputs in git; ready hook in this folder: hooks/block_unsafe_blender_python.py (PreToolUse, matcher mcp__blender__.*, exits 2 on os/subprocess/shutil/socket, exec/eval, file writes; settings snippet in its header; test: sh hooks/test_hook.sh)
 - reuse: save a working prompt+script as ~/.claude/skills/<name>/SKILL.md
 - CLI manual: https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html
 

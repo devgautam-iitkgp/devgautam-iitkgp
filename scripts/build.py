@@ -82,7 +82,7 @@ full += [
     "- **Render from the command line.** `-o //renders/frame_#### -f 1` renders one frame (`//` = relative to the .blend); `-a` renders the whole animation.",
     "- **Let Claude check its own work.** Render a small preview PNG (or use the community server's viewport screenshot tool), have Claude read the image and judge it against the brief, and loop until it passes: the evaluator-optimizer pattern. BlenderGym found models weaker at verifying than generating, so give the judge concrete criteria (object count, camera framing, material names).",
     "- **Run it unattended.** `claude -p \"<job>\" --allowedTools \"Bash(blender -b *),Read,Write\"` from cron or a Desktop scheduled task when Blender is on your machine. Cloud scheduled tasks and GitHub Actions work only if the runner installs Blender first.",
-    "- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; add a PreToolUse hook on the Blender code tool (for example a matcher like `mcp__blender__.*`) that blocks Python importing os, subprocess or shutil.",
+    "- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; use the ready PreToolUse hook in this repo, `hooks/block_unsafe_blender_python.py` (matcher `mcp__blender__.*`): it exits 2, blocking the call, when Blender code imports os, subprocess, shutil or socket, calls exec or eval, or opens a file for writing. The settings snippet is in its header; `sh hooks/test_hook.sh` runs its tests. It is a tripwire, not a sandbox.",
     "- **Make it reusable.** Once a prompt plus script works, save it as a skill (`~/.claude/skills/<name>/SKILL.md`) so `/name` reruns it.",
     "",
 ]
@@ -127,7 +127,7 @@ A checked list of {n} resources for driving Blender with Claude (and other MCP c
 
 - **AI agents:** read [AGENT_INDEX.md](AGENT_INDEX.md) first (compact, one line per resource). Machine-readable: [resources.json](resources.json).
 - **People:** browse [DIRECTORY.md](DIRECTORY.md).
-- **Install as a Claude Code skill** (loads by itself when Blender comes up): `git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp` (update later with `git -C ~/.claude/skills/blender-claude-mcp pull`).
+- **Install as a Claude Code skill** (loads by itself when Blender comes up): `git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp` (update later with `git -C ~/.claude/skills/blender-claude-mcp pull`). One-time per computer: every local session loads it. Cloud sessions (claude.ai/code) and Cowork do not load personal skills; there, fetch the raw AGENT_INDEX.md link instead.
 - **Quality checks:** `python3 scripts/eval_index.py AGENT_INDEX.md evals/questions.json` (does the index answer real questions?) and `python3 scripts/check_links.py resources.json` (are links alive?).
 
 Last checked: {checked}. Entries marked verified were opened on that date; others come from search results or listing sites.

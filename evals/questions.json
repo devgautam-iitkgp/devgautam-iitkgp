@@ -201,7 +201,22 @@
     "sys\\.argv"
    ],
    "heldout": true
+  },
+  {
+   "id": "b18",
+   "q": "Give me a ready-made hook that blocks unsafe Blender Python",
+   "must_match": [
+    "block_unsafe_blender_python"
+   ]
+  },
+  {
+   "id": "b19",
+   "q": "Will this skill load in a claude.ai/code cloud session?",
+   "must_match": [
+    "cloud"
+   ]
   }
  ],
- "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete."
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete.",
+ "max_tokens": 4000
 }

@@ -18,7 +18,7 @@ General automation patterns (headless runs, hooks, loops, scheduling, evals, gua
 - **Render from the command line.** `-o //renders/frame_#### -f 1` renders one frame (`//` = relative to the .blend); `-a` renders the whole animation.
 - **Let Claude check its own work.** Render a small preview PNG (or use the community server's viewport screenshot tool), have Claude read the image and judge it against the brief, and loop until it passes: the evaluator-optimizer pattern. BlenderGym found models weaker at verifying than generating, so give the judge concrete criteria (object count, camera framing, material names).
 - **Run it unattended.** `claude -p "<job>" --allowedTools "Bash(blender -b *),Read,Write"` from cron or a Desktop scheduled task when Blender is on your machine. Cloud scheduled tasks and GitHub Actions work only if the runner installs Blender first.
-- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; add a PreToolUse hook on the Blender code tool (for example a matcher like `mcp__blender__.*`) that blocks Python importing os, subprocess or shutil.
+- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; use the ready PreToolUse hook in this repo, `hooks/block_unsafe_blender_python.py` (matcher `mcp__blender__.*`): it exits 2, blocking the call, when Blender code imports os, subprocess, shutil or socket, calls exec or eval, or opens a file for writing. The settings snippet is in its header; `sh hooks/test_hook.sh` runs its tests. It is a tripwire, not a sandbox.
 - **Make it reusable.** Once a prompt plus script works, save it as a skill (`~/.claude/skills/<name>/SKILL.md`) so `/name` reruns it.
 
 ## Official (Blender Lab + Claude connector)

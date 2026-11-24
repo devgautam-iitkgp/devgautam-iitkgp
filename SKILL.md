@@ -10,4 +10,6 @@ description: Checked directory of Blender + Claude resources (official Blender L
 3. Star counts and versions drift. Before quoting one as current, re-check the linked page.
 4. For general automation patterns (hooks, loops, scheduling, evals), the sister skill is `claude-automation-patterns`, or fetch https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md
 
+5. To block unsafe Python in Blender MCP calls, offer the ready hook `hooks/block_unsafe_blender_python.py` (setup in its header).
+
 Update this skill: `git -C ~/.claude/skills/blender-claude-mcp pull`
