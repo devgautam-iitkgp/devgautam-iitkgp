@@ -1,19 +1,207 @@
-{"questions":[
-{"id":"b01","q":"How do I turn on the official Blender connector in Claude Desktop?","must_match":["Customize > Connectors","5\\.1"]},
-{"id":"b02","q":"How do I add the official Blender server to Claude Code?","must_match":["uvx --from","projects\\.blender\\.org"]},
-{"id":"b03","q":"Two Blender add-ons fight each other. Why?","must_match":["9876"]},
-{"id":"b04","q":"Claude says 'Server disconnected'. Fix?","must_match":["3\\.11"]},
-{"id":"b05","q":"Can I use the Blender connector from claude.ai in a browser?","must_match":["claude\\.ai web"]},
-{"id":"b06","q":"Best skill pack for game assets?","must_match":["arjun988"]},
-{"id":"b07","q":"Which skills work with the official server?","must_match":["ra100"]},
-{"id":"b08","q":"Can I drive Blender with a local LLM like Ollama?","must_match":["Ollama"]},
-{"id":"b09","q":"Are there known security holes in Blender MCP servers?","must_match":["CVE"]},
-{"id":"b10","q":"How do I generate a 3D model from text?","must_match":["Hunyuan3D|Rodin|Tripo"]},
-{"id":"b11","q":"Where do I get free assets and HDRIs?","must_match":["Poly Haven"]},
-{"id":"b12","q":"What research exists on agents editing Blender scenes?","must_match":["BlenderGym|SceneCraft"]},
-{"id":"b13","q":"How do I run Blender jobs headless (no GUI) with Claude, e.g. batch renders?","must_match":["--background|blender -b"]},
-{"id":"b14","q":"How does Claude check its own Blender work visually?","must_match":["screenshot|render.{0,40}(check|verify|judge|review)"]},
-{"id":"b15","q":"How do I run a Blender job on a schedule or in CI with Claude?","must_match":["claude -p","schedul|CI"]},
-{"id":"b16","q":"How do I stop Claude running destructive Python in Blender?","must_match":["hook|allowedTools|permission"]},
-{"id":"b17","q":"Where are general Claude automation patterns (loops, hooks, evals)?","must_match":["claude-automation"]}
-]}
+{
+ "questions": [
+  {
+   "id": "b01",
+   "q": "How do I turn on the official Blender connector in Claude Desktop?",
+   "must_match": [
+    "Customize > Connectors",
+    "5\\.1"
+   ]
+  },
+  {
+   "id": "b02",
+   "q": "How do I add the official Blender server to Claude Code?",
+   "must_match": [
+    "uvx --from",
+    "projects\\.blender\\.org"
+   ]
+  },
+  {
+   "id": "b03",
+   "q": "Two Blender add-ons fight each other. Why?",
+   "must_match": [
+    "9876"
+   ]
+  },
+  {
+   "id": "b04",
+   "q": "Claude says 'Server disconnected'. Fix?",
+   "must_match": [
+    "3\\.11"
+   ]
+  },
+  {
+   "id": "b05",
+   "q": "Can I use the Blender connector from claude.ai in a browser?",
+   "must_match": [
+    "claude\\.ai web"
+   ]
+  },
+  {
+   "id": "b06",
+   "q": "Best skill pack for game assets?",
+   "must_match": [
+    "arjun988"
+   ]
+  },
+  {
+   "id": "b07",
+   "q": "Which skills work with the official server?",
+   "must_match": [
+    "ra100"
+   ]
+  },
+  {
+   "id": "b08",
+   "q": "Can I drive Blender with a local LLM like Ollama?",
+   "must_match": [
+    "Ollama"
+   ]
+  },
+  {
+   "id": "b09",
+   "q": "Are there known security holes in Blender MCP servers?",
+   "must_match": [
+    "CVE"
+   ]
+  },
+  {
+   "id": "b10",
+   "q": "How do I generate a 3D model from text?",
+   "must_match": [
+    "Hunyuan3D|Rodin|Tripo"
+   ]
+  },
+  {
+   "id": "b11",
+   "q": "Where do I get free assets and HDRIs?",
+   "must_match": [
+    "Poly Haven"
+   ]
+  },
+  {
+   "id": "b12",
+   "q": "What research exists on agents editing Blender scenes?",
+   "must_match": [
+    "BlenderGym|SceneCraft"
+   ]
+  },
+  {
+   "id": "b13",
+   "q": "How do I run Blender jobs headless (no GUI) with Claude, e.g. batch renders?",
+   "must_match": [
+    "--background|blender -b"
+   ]
+  },
+  {
+   "id": "b14",
+   "q": "How does Claude check its own Blender work visually?",
+   "must_match": [
+    "screenshot|render.{0,40}(check|verify|judge|review)"
+   ]
+  },
+  {
+   "id": "b15",
+   "q": "How do I run a Blender job on a schedule or in CI with Claude?",
+   "must_match": [
+    "claude -p",
+    "schedul|CI"
+   ]
+  },
+  {
+   "id": "b16",
+   "q": "How do I stop Claude running destructive Python in Blender?",
+   "must_match": [
+    "hook|allowedTools|permission"
+   ]
+  },
+  {
+   "id": "b17",
+   "q": "Where are general Claude automation patterns (loops, hooks, evals)?",
+   "must_match": [
+    "claude-automation"
+   ]
+  },
+  {
+   "id": "h01",
+   "q": "Which server has the most tools and needs Blender 5.2 LTS?",
+   "must_match": [
+    "blenderwright"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h02",
+   "q": "Is there a Blender MCP without telemetry?",
+   "must_match": [
+    "telemetry"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h03",
+   "q": "How do I fully reset uv cache for the server?",
+   "must_match": [
+    "uv cache clean"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h04",
+   "q": "Video showing official connector with Claude Code",
+   "must_match": [
+    "b5F-yNG4lds"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h05",
+   "q": "Paid option with safe defaults",
+   "must_match": [
+    "StraySpark"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h06",
+   "q": "Product-shot skill pack",
+   "must_match": [
+    "kevinbadi"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h07",
+   "q": "Render one frame from the command line",
+   "must_match": [
+    "-f 1|render-frame"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h08",
+   "q": "Multi-agent research for Blender scripts",
+   "must_match": [
+    "LL3M"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h09",
+   "q": "Install link needs dragging twice?",
+   "must_match": [
+    "twice"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h10",
+   "q": "Pass custom arguments to a headless Blender script",
+   "must_match": [
+    "sys\\.argv"
+   ],
+   "heldout": true
+  }
+ ],
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete."
+}
