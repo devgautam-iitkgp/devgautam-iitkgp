@@ -1,0 +1,311 @@
+{
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md (case-insensitive). heldout=true questions were written after the index was finished and were not used to edit it. Keyword presence is a proxy, not proof the answer is complete.",
+ "max_tokens": 4000,
+ "questions": [
+  {
+   "id": "y01",
+   "q": "How many subscribers and watch hours to join YPP for ad revenue?",
+   "must_match": [
+    "1,000 subs",
+    "4,000 watch hours",
+    "10M Shorts views"
+   ]
+  },
+  {
+   "id": "y02",
+   "q": "What changes in YPP from February 2027?",
+   "must_match": [
+    "Feb 1, 2027",
+    "8,000 watch hours",
+    "20M Shorts views"
+   ]
+  },
+  {
+   "id": "y03",
+   "q": "Lowest tier to unlock memberships and Super Thanks",
+   "must_match": [
+    "500 subs",
+    "3,000 watch hours",
+    "3M Shorts views"
+   ]
+  },
+  {
+   "id": "y04",
+   "q": "What share of ad revenue does a creator keep on long-form vs Shorts?",
+   "must_match": [
+    "55%",
+    "45%"
+   ]
+  },
+  {
+   "id": "y05",
+   "q": "How do Shorts pay creators?",
+   "must_match": [
+    "pool",
+    "music",
+    "engaged views"
+   ]
+  },
+  {
+   "id": "y06",
+   "q": "My video gets impressions but few clicks — what to fix?",
+   "must_match": [
+    "packaging",
+    "CTR"
+   ]
+  },
+  {
+   "id": "y07",
+   "q": "Viewers leave in the first 30 seconds",
+   "must_match": [
+    "Intro",
+    "30 s",
+    "hook"
+   ]
+  },
+  {
+   "id": "y08",
+   "q": "How do I find video ideas that will work?",
+   "must_match": [
+    "[Oo]utlier",
+    "5.100"
+   ]
+  },
+  {
+   "id": "y09",
+   "q": "Thumbnail size and file limits",
+   "must_match": [
+    "1280.720",
+    "2 MB"
+   ]
+  },
+  {
+   "id": "y10",
+   "q": "How to A/B test thumbnails",
+   "must_match": [
+    "Test & Compare",
+    "watch time share"
+   ]
+  },
+  {
+   "id": "y11",
+   "q": "What loudness should I master audio to for YouTube?",
+   "must_match": [
+    "14 LUFS"
+   ]
+  },
+  {
+   "id": "y12",
+   "q": "Is royalty-free music safe from Content ID?",
+   "must_match": [
+    "Audio Library",
+    "royalty-free"
+   ]
+  },
+  {
+   "id": "y13",
+   "q": "Max length of a Short",
+   "must_match": [
+    "3 minutes"
+   ]
+  },
+  {
+   "id": "y14",
+   "q": "How to send Shorts viewers to long videos",
+   "must_match": [
+    "Related video"
+   ]
+  },
+  {
+   "id": "y15",
+   "q": "Can a faceless AI channel be monetised?",
+   "must_match": [
+    "[Ii]nauthentic",
+    "templat"
+   ]
+  },
+  {
+   "id": "y16",
+   "q": "Do I need to label AI-generated content?",
+   "must_match": [
+    "[Dd]isclose",
+    "realistic"
+   ]
+  },
+  {
+   "id": "y17",
+   "q": "Chapter rules",
+   "must_match": [
+    "00:00",
+    "at least 3",
+    "10 s"
+   ]
+  },
+  {
+   "id": "y18",
+   "q": "End screen requirements",
+   "must_match": [
+    "5.20 s",
+    "25 s",
+    "4 elements"
+   ]
+  },
+  {
+   "id": "y19",
+   "q": "What is the Hype button and who gets it?",
+   "must_match": [
+    "Hype",
+    "500.500,000"
+   ]
+  },
+  {
+   "id": "y20",
+   "q": "What happens with three copyright strikes?",
+   "must_match": [
+    "Copyright strike",
+    "90 days",
+    "termination"
+   ]
+  },
+  {
+   "id": "y21",
+   "q": "Is a Content ID claim a strike?",
+   "must_match": [
+    "Content ID claim",
+    "≠ strike|not a strike"
+   ]
+  },
+  {
+   "id": "y22",
+   "q": "Effects of marking video made for kids",
+   "must_match": [
+    "COPPA",
+    "personalised ads"
+   ]
+  },
+  {
+   "id": "y23",
+   "q": "YouTube Data API daily quota",
+   "must_match": [
+    "10,000 units",
+    "videos\\.insert"
+   ]
+  },
+  {
+   "id": "y24",
+   "q": "Which MCP servers can connect Claude to YouTube?",
+   "must_match": [
+    "MCP",
+    "OAuth"
+   ]
+  },
+  {
+   "id": "y25",
+   "q": "What should an agent never do on a channel without approval?",
+   "must_match": [
+    "never publish",
+    "monetisation"
+   ]
+  },
+  {
+   "id": "y26",
+   "q": "RPM vs CPM",
+   "must_match": [
+    "RPM",
+    "CPM"
+   ]
+  },
+  {
+   "id": "y27",
+   "q": "Do public view counts still need 30 seconds?",
+   "must_match": [
+    "Aug 24, 2026",
+    "engaged views"
+   ]
+  },
+  {
+   "id": "h01",
+   "q": "Is it bad to delete a Short and re-upload it?",
+   "must_match": [
+    "spam"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h02",
+   "q": "Can I earn from tagging products before 1,000 subscribers?",
+   "must_match": [
+    "Shopping affiliate",
+    "500"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h03",
+   "q": "How soon does a new video reach people who never watched me?",
+   "must_match": [
+    "first hour"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h04",
+   "q": "Does taking a break hurt my channel?",
+   "must_match": [
+    "[Bb]reak"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h05",
+   "q": "How many languages does auto dubbing support?",
+   "must_match": [
+    "27 languages"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h06",
+   "q": "Why are my uploads through the API stuck as private?",
+   "must_match": [
+    "unverified",
+    "private"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h07",
+   "q": "How long before judging if a new channel works?",
+   "must_match": [
+    "50 videos"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h08",
+   "q": "Do tags matter?",
+   "must_match": [
+    "[Tt]ags matter little"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h09",
+   "q": "What happens on a first Community Guidelines violation?",
+   "must_match": [
+    "warning",
+    "training"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h10",
+   "q": "Should I compare my CTR to a benchmark?",
+   "must_match": [
+    "relative",
+    "own similar videos"
+   ],
+   "heldout": true
+  }
+ ]
+}

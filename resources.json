@@ -1,0 +1,601 @@
+{
+ "title": "YouTube Growth Directory",
+ "updated": "2026-11-25",
+ "note": "403s from canva.com, pexels.com, storyblocks.com and ppc.land are bot blocks; the ppc.land and storyblocks pages were confirmed by WebFetch on 2026-11-25.",
+ "resources": [
+  {
+   "name": "Claude doc version",
+   "url": "https://claude.ai/artifact/2Lq8sVePp9rNjqE8Eouva6",
+   "section": null,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "How YouTube recommendations work",
+   "url": "https://support.google.com/youtube/answer/16089387",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "How YouTube Works",
+   "url": "https://www.youtube.com/howyoutubeworks/recommendations/",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "PPC Land",
+   "url": "https://ppc.land/subscribers-skip-90-of-uploads-in-their-feed-youtube-director-says/",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "OutlierKit's dated summary",
+   "url": "https://outlierkit.com/resources/youtube-shorts-algorithm/",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/inside-youtube/engaged-views-youtube-explained/",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help: how engagement metrics are counted",
+   "url": "https://support.google.com/youtubecreatorstudio/answer/2991785",
+   "section": 1,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "his thread",
+   "url": "https://threadreaderapp.com/thread/1874513765762531734.html",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/?p=2342404",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Tubefilter",
+   "url": "https://www.tubefilter.com/2026/08/05/youtube-research-tab-outlier-multipliers-viewer-comparison-data/",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/15575509",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "1of10",
+   "url": "https://1of10.com/features/homepage-outliers",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ",
+   "url": "https://vidiq.com/features/outliers/",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "ViewStats",
+   "url": "https://www.viewstats.com",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "OutlierKit",
+   "url": "https://outlierkit.com",
+   "section": 2,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Gigazine summary of the leaked guide",
+   "url": "https://gigazine.net/gsc_news/en/20240917-mrbeast-youtube-production",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "thread",
+   "url": "https://threadreaderapp.com/user/PaddyG96",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "study",
+   "url": "https://vidiq.com/blog/post/youtube-thumbnail-tips/",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/creator-and-artist-stories/renes-top-five-june-14-2024/",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help Center",
+   "url": "https://support.google.com/youtube/answer/16391400",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/",
+   "section": 3,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help: key moments for audience retention",
+   "url": "https://support.google.com/youtube/answer/9314415",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/1715160",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ",
+   "url": "https://vidiq.com/pt/blog/post/audience-retention-secrets-youtube",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Passionfruit",
+   "url": "https://passionfru.it/?p=81151",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ",
+   "url": "https://vidiq.com/tr/blog/post/audience-retention-secrets-youtube",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ",
+   "url": "https://vidiq.com/tr/blog/post/increase-audience-retention-youtube/",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog, Sep 23, 2026",
+   "url": "https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/",
+   "section": 4,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Descript",
+   "url": "https://descript.com/blog/article/how-to-set-the-perfect-audio-levels-for-video",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Hollyland",
+   "url": "https://store.hollyland.com/blogs/creator-hub/normalize-audio-on-youtube",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/3376882",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help: tips to find safe music",
+   "url": "https://support.google.com/youtube/answer/15577610",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/11610609",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog, May 2026",
+   "url": "https://blog.youtube/creator-and-artist-stories/youtube-auto-dubbing-explained/",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/?p=3044901",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/",
+   "section": 5,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "OutlierKit's dated list",
+   "url": "https://outlierkit.com/resources/youtube-shorts-algorithm/",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "SEJ",
+   "url": "https://searchenginejournal.com/youtube-explains-how-shorts-algorithm-works/494953",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Vaizle summary",
+   "url": "https://insights.vaizle.com/how-youtube-shorts-algorithm-works/",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Tubefilter",
+   "url": "https://www.tubefilter.com/2023/09/01/youtube-related-links-multi-format-creators-shorts-live-long-form/amp/",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube's guide",
+   "url": "https://blog.youtube/creator-and-artist-stories/youtube-related-videos-traffic-guide/",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help: Shorts monetization policies",
+   "url": "https://support.google.com/youtube/answer/12504220",
+   "section": 6,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Storyblocks",
+   "url": "https://www.storyblocks.com/resources/blog/faceless-youtube-channel",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "channel monetization policies",
+   "url": "https://support.google.com/youtube/answer/1311392",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Tubefilter",
+   "url": "https://www.tubefilter.com/2026/07/13/youtube-inauthentic-content-monetization-policy-update/",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/14328491",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.google/intl/en-in/products/platforms/improving-ai-labels-for-viewers-and-creators/",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "HackerNoon",
+   "url": "https://hackernoon.com/youtubes-ai-slop-crackdown-cant-tell-a-directed-ai-film-from-a-bot-farm",
+   "section": 7,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/9884579",
+   "section": 8,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/6388789",
+   "section": 8,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/15333273",
+   "section": 8,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help: how to earn money",
+   "url": "https://support.google.com/youtube/answer/72857",
+   "section": 10,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "expanded YPP",
+   "url": "https://support.google.com/youtube/answer/13429240",
+   "section": 10,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/",
+   "section": 10,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube blog",
+   "url": "https://blog.youtube/creator-and-artist-stories/youtube-shopping-expansion-500-subscribers/",
+   "section": 10,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Strikes FAQ",
+   "url": "https://support.google.com/youtube/answer/9235777",
+   "section": 12,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Community Guidelines strikes",
+   "url": "https://support.google.com/youtube/answer/2802032",
+   "section": 12,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "copyright strikes",
+   "url": "https://support.google.com/youtube/answer/2814000",
+   "section": 12,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Help",
+   "url": "https://support.google.com/youtube/answer/9527654",
+   "section": 12,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Data API v3",
+   "url": "https://developers.google.com/youtube/v3",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "quota page",
+   "url": "https://developers.google.com/youtube/v3/determine_quota_cost",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Analytics API",
+   "url": "https://developers.google.com/youtube/analytics",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Reporting API",
+   "url": "https://developers.google.com/youtube/reporting",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "ZubeidHendricks/youtube-mcp-server",
+   "url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Zernio",
+   "url": "https://zernio.com/youtube-mcp",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Claude automation directory",
+   "url": "https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz",
+   "section": 13,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Vaizle summary",
+   "url": "https://insights.vaizle.com/how-youtube-shorts-algorithm-works/",
+   "section": 14,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Storyblocks",
+   "url": "https://www.storyblocks.com/resources/blog/faceless-youtube-channel",
+   "section": 14,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "HackerNoon",
+   "url": "https://hackernoon.com/youtubes-ai-slop-crackdown-cant-tell-a-directed-ai-film-from-a-bot-farm",
+   "section": 14,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "SEJ",
+   "url": "https://www.searchenginejournal.com/youtube-algorithm-myths-debunked-insights-from-the-growth-team/510091/",
+   "section": 14,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Help Center",
+   "url": "https://support.google.com/youtube",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Official Blog",
+   "url": "https://blog.youtube",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Creator Insider",
+   "url": "https://www.youtube.com/@CreatorInsider",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Creators",
+   "url": "https://www.youtube.com/creators",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube Liaison on X",
+   "url": "https://x.com/YouTubeLiaison",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "YouTube API documentation",
+   "url": "https://developers.google.com/youtube",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ",
+   "url": "https://vidiq.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "TubeBuddy",
+   "url": "https://www.tubebuddy.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "1of10",
+   "url": "https://1of10.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "ViewStats",
+   "url": "https://www.viewstats.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "OutlierKit",
+   "url": "https://outlierkit.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Canva",
+   "url": "https://www.canva.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Figma",
+   "url": "https://www.figma.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "DaVinci Resolve",
+   "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "CapCut",
+   "url": "https://www.capcut.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Descript",
+   "url": "https://www.descript.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Audacity",
+   "url": "https://www.audacityteam.org",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Epidemic Sound",
+   "url": "https://www.epidemicsound.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Storyblocks",
+   "url": "https://www.storyblocks.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Pexels",
+   "url": "https://www.pexels.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Artlist",
+   "url": "https://artlist.io",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Claude automation directory",
+   "url": "https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Paddy Galloway",
+   "url": "https://www.youtube.com/@paddygalloway8780",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Colin and Samir",
+   "url": "https://www.youtube.com/@ColinandSamir",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Film Booth",
+   "url": "https://www.youtube.com/@FilmBooth",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "vidIQ blog",
+   "url": "https://vidiq.com/blog/",
+   "section": 15,
+   "verified": "2026-11-25"
+  },
+  {
+   "name": "Tubefilter",
+   "url": "https://www.tubefilter.com",
+   "section": 15,
+   "verified": "2026-11-25"
+  }
+ ]
+}
