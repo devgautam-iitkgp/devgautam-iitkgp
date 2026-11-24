@@ -1,228 +1,252 @@
 {
  "title": "How to automate with Claude — sources",
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "resources": [
   {
    "name": "multi-agent research post",
    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
    "section": 1,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Building effective agents",
    "url": "https://www.anthropic.com/engineering/building-effective-agents",
    "section": 1,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Effective harnesses for long-running agents",
    "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
    "section": 2,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Run Claude Code programmatically",
    "url": "https://code.claude.com/docs/en/headless",
    "section": 3,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Hooks reference",
    "url": "https://code.claude.com/docs/en/hooks",
    "section": 3,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "claude.ai/code/routines",
    "url": "https://claude.ai/code/routines",
    "section": 3,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Automate work with routines",
    "url": "https://code.claude.com/docs/en/routines",
    "section": 3,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-agent-sdk-demos",
    "url": "https://github.com/anthropics/claude-agent-sdk-demos",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Claude Cookbook",
    "url": "https://platform.claude.com/cookbook",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Advanced tool use",
    "url": "https://www.anthropic.com/engineering/advanced-tool-use",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Code execution with MCP",
    "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Computer use tool",
    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Writing effective tools for agents",
    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
    "section": 4,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Zapier MCP docs",
    "url": "https://docs.zapier.com/mcp/home",
    "section": 5,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Zapier: automate Claude",
    "url": "https://zapier.com/blog/automate-claude/",
    "section": 5,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "n8n-mcp",
    "url": "https://github.com/czlonkowski/n8n-mcp",
    "section": 5,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Anthropic",
    "url": "https://claude.com/blog/how-anthropic-uses-claude-marketing",
    "section": 6,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Anthropic",
    "url": "https://claude.com/resources/articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep",
    "section": 6,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-reflect",
    "url": "https://github.com/BayramAnnakov/claude-reflect",
    "section": 7,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-skill-self-improvement",
    "url": "https://github.com/bokan/claude-skill-self-improvement",
    "section": 7,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-code-tips",
    "url": "https://github.com/ykdojo/claude-code-tips",
    "section": 7,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "anthropics/skills",
    "url": "https://github.com/anthropics/skills",
    "section": 7,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Demystifying evals for AI agents",
    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
    "section": 7,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Claude Code auto mode",
    "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
    "section": 8,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "The Register",
    "url": "https://www.theregister.com/a/5285326",
    "section": 8,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Beyond permission prompts",
    "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
    "section": 8,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "Mitigating prompt injection in browser use",
    "url": "https://www.anthropic.com/research/prompt-injection-defenses",
    "section": 8,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "post",
    "url": "https://www.anthropic.com/engineering/building-c-compiler",
    "section": 9,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "repo",
    "url": "https://github.com/anthropics/claudes-c-compiler",
    "section": 9,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
   },
   {
    "name": "phase two",
    "url": "https://www.anthropic.com/news/project-vend-2",
    "section": 9,
-   "verified": "2026-11-23"
+   "verified": "2026-11-24"
+  },
+  {
+   "name": "MCP docs",
+   "url": "https://code.claude.com/docs/en/mcp",
+   "section": 10,
+   "verified": "2026-11-24"
+  },
+  {
+   "name": "Skills docs",
+   "url": "https://code.claude.com/docs/en/skills",
+   "section": 10,
+   "verified": "2026-11-24"
+  },
+  {
+   "name": "Plugins overview",
+   "url": "https://code.claude.com/docs/en/plugins/overview",
+   "section": 10,
+   "verified": "2026-11-24"
+  },
+  {
+   "name": "Plugin marketplaces",
+   "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+   "section": 10,
+   "verified": "2026-11-24"
   },
   {
    "name": "Effective context engineering for AI agents",
    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "Building agents with the Claude Agent SDK",
    "url": "https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "Agent SDK",
    "url": "https://code.claude.com/docs/en/agent-sdk/overview",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "awesome-claude-code",
    "url": "https://github.com/hesreallyhim/awesome-claude-code",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-cookbooks",
    "url": "https://github.com/anthropics/claude-cookbooks",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "claude-code-action",
    "url": "https://github.com/anthropics/claude-code-action",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   },
   {
    "name": "zapier-mcp",
    "url": "https://github.com/zapier/zapier-mcp",
-   "section": 10,
-   "verified": "2026-11-23"
+   "section": 11,
+   "verified": "2026-11-24"
   }
  ]
 }

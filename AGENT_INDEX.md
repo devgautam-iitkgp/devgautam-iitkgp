@@ -1,5 +1,6 @@
 # AGENT INDEX — How to automate with Claude (patterns, not use cases)
-v2026-11-23 · full text: DIRECTORY.md (same folder) · machine list: resources.json
+v2026-11-24 · full text: DIRECTORY.md (same folder) · machine list: resources.json
+Install as a skill (auto-loads on automation questions): git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/claude-automation-patterns
 Read this first (~2.5k tokens). Open DIRECTORY.md section N only when you need detail.
 
 ## DECIDE (route)
@@ -83,8 +84,17 @@ C compiler: 16 Opus 4.6 agents, ~2,000 sessions, ~$20k, 100k-line Rust, builds L
 research system: lead Opus + Sonnet subagents, +90.2%, ~15x tokens · long-running harness: initializer + 1 feature/session
 growth marketing 30min→30s · field marketer BigQuery MCP briefings · Project Vend: phase 2 profitable via tools + human purchase approval + CEO agent
 
-## TOP SOURCES [§10]
+## PACKAGING [§10] (lightest that works)
+fact for every session → CLAUDE.md (repo root | ~/.claude/CLAUDE.md)
+repeated procedure → skill: ~/.claude/skills/<name>/SKILL.md (all projects) | .claude/skills/<name>/SKILL.md (repo); frontmatter name + description (description = trigger); /name; live reload; .claude/commands/x.md still works (merged into skills)
+isolated worker → subagent .claude/agents/<name>.md | ~/.claude/agents/
+must-always rule → hook in .claude/settings.json
+new capability → MCP: claude mcp add <name> -- <cmd> | claude mcp add --transport http <name> <url>; --scope local(default)|project(.mcp.json, git-shared)|user
+share a bundle → plugin (.claude-plugin/plugin.json + skills/ agents/ hooks/hooks.json .mcp.json); /plugin marketplace add owner/repo; /plugin install name@marketplace; claude plugin install name@mkt --scope project
+example: this branch has SKILL.md at root → git clone into ~/.claude/skills/claude-automation-patterns
+
+## TOP SOURCES [§11]
 anthropic.com/engineering/: building-effective-agents · effective-harnesses-for-long-running-agents · multi-agent-research-system · effective-context-engineering-for-ai-agents · writing-tools-for-agents · advanced-tool-use · code-execution-with-mcp · demystifying-evals-for-ai-agents · building-agents-with-the-claude-agent-sdk · claude-code-sandboxing · claude-code-auto-mode · building-c-compiler
-docs: code.claude.com/docs/en/{headless,hooks,routines,agent-sdk/overview} · platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool · docs.zapier.com/mcp/home
+docs: code.claude.com/docs/en/{headless,hooks,routines,skills,mcp,plugins/overview,agent-sdk/overview} · platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool · docs.zapier.com/mcp/home
 hub: github.com/hesreallyhim/awesome-claude-code
 not covered: Reddit (blocked during research). Verify flags against docs; names change fast.

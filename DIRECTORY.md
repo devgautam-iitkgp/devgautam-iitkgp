@@ -1,6 +1,6 @@
 # How to Automate with Claude — Patterns Directory
 
-Researched 2026-11-23. Mirror of the Claude doc https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz ("Full directory" tab). Short version for agents: AGENT_INDEX.md.
+Researched 2026-11-23, updated 2026-11-24. Mirror of the Claude doc https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz ("Full directory" tab). Short version for agents: AGENT_INDEX.md.
 
 ## 0. Quick pick
 
@@ -23,6 +23,7 @@ It has to run with your laptop closed? Every route has a cloud option: cloud sch
 | Ship an agent inside your own product | The Agent SDK | 4 |
 | Process 10,000 documents cheaply | The Message Batches API (50% off) | 4 |
 | Let an agent improve itself over time | A reflection loop plus an eval set | 7 |
+| Make an automation reusable or shareable | A skill, hook, MCP server or plugin | 10 |
 
 ## 1. The six parts of every automation
 
@@ -375,7 +376,73 @@ For things that must never happen, use a `PreToolUse` hook that exits with code 
 | Field marketing briefings (Anthropic) | A personalised weekly briefing for every account executive | Claude Code plus BigQuery through MCP, built during an hour of a marketing hackathon | Data access through MCP turns one report into many ([post](https://claude.com/resources/articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep)) |
 | Project Vend (Anthropic and Andon Labs) | An AI shopkeeper lost money in phase one (Sonnet 3.7) and turned a profit in phase two | Phase two: Sonnet 4.0, then 4.5; better inventory and supplier tools; human approval of purchases; a CEO agent and a merchandise agent alongside the shopkeeper | Scaffolding beats raw intelligence; agents can be manipulated, so approvals matter ([phase two](https://www.anthropic.com/news/project-vend-2)) |
 
-## 10. Sources and where to keep learning
+## 10. Packaging — how automations get installed and shared
+
+Every automation above ends up as one of six things. Pick the lightest one that does the job:
+
+| You have… | Package it as | Where it lives | How it runs |
+| --- | --- | --- | --- |
+| A fact every session needs ("we use pnpm", "renders go in /out") | `CLAUDE.md` | Project root, or `~/.claude/CLAUDE.md` for all projects | Loaded into every session |
+| A procedure you keep pasting | Skill | `~/.claude/skills/<name>/SKILL.md` (all projects) or `.claude/skills/<name>/SKILL.md` (this repo) | Claude loads it when the description matches, or you type `/name` |
+| A worker that needs its own context and tools | Subagent | `.claude/agents/<name>.md` (or `~/.claude/agents/`) | Claude delegates to it, or you @-mention it |
+| A rule that must always hold | Hook | `.claude/settings.json` (or `~/.claude/settings.json`) | Runs at its event, whatever the model decides |
+| A new capability (an API, a database, an app) | MCP server | `claude mcp add …`, stored in `~/.claude.json` or `.mcp.json` | Its tools appear to Claude |
+| A bundle to share with others | Plugin | A directory with `.claude-plugin/plugin.json`, listed in a marketplace | `/plugin marketplace add`, then `/plugin install` |
+
+### MCP servers
+
+```bash
+claude mcp add <name> -- <command> [args...]          # local process (stdio)
+claude mcp add --transport http <name> <url>           # remote server
+claude mcp add --transport http shared --scope project https://example.com/mcp
+```
+
+Scopes: `local` (default; this project, only you), `project` (written to `.mcp.json` in the repo, shared through git) and `user` (all your projects). Source: [MCP docs](https://code.claude.com/docs/en/mcp).
+
+### Skills
+
+```markdown
+---
+name: weekly-report
+description: Build the weekly sales report from the CRM export. Use when asked for the weekly report or a sales summary.
+---
+
+1. Read the newest CSV in ./exports.
+2. Total by rep and region; flag anything down more than 20% week on week.
+3. Write report.md with a 5-line summary at the top.
+```
+
+- The description is the trigger: Claude reads every skill's description and loads the one that matches, so put the words a request would use up front.
+- Scripts, templates and reference files sit beside `SKILL.md` and are read only when needed (progressive disclosure).
+- Custom commands were merged into skills: `.claude/commands/deploy.md` and `.claude/skills/deploy/SKILL.md` both make `/deploy`.
+- Claude Code watches skill folders, so a new or edited skill works in the current session.
+- When a section of `CLAUDE.md` grows from a fact into a procedure, move it into a skill.
+
+Source: [Skills docs](https://code.claude.com/docs/en/skills).
+
+### Plugins and marketplaces
+
+A plugin is one directory: `.claude-plugin/plugin.json` plus any of `skills/`, `agents/`, `hooks/hooks.json` and `.mcp.json`. A marketplace is a repo with `.claude-plugin/marketplace.json` listing plugins.
+
+```text
+/plugin marketplace add owner/repo
+/plugin install name@marketplace
+/plugin install github@claude-plugins-official          # Anthropic's official marketplace
+claude plugin install name@marketplace --scope project  # from a script
+```
+
+Sources: [Plugins overview](https://code.claude.com/docs/en/plugins/overview), [Plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
+
+### Worked example: this directory is a skill
+
+```bash
+git clone -b claude-automation --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/claude-automation-patterns
+git -C ~/.claude/skills/claude-automation-patterns pull    # update later
+```
+
+The branch has a `SKILL.md` at its root, so Claude Code loads it whenever automation comes up, with no link to paste. The Blender directory installs the same way (branch `blender-claude-mcp`).
+
+## 11. Sources and where to keep learning
 
 ### Anthropic engineering posts (read these first)
 
@@ -392,7 +459,7 @@ For things that must never happen, use a `PreToolUse` hook that exits with code 
 
 ### Docs
 
-- [Run Claude Code programmatically](https://code.claude.com/docs/en/headless) · [Hooks](https://code.claude.com/docs/en/hooks) · [Cloud scheduled tasks](https://code.claude.com/docs/en/routines) · [Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview)
+- [Run Claude Code programmatically](https://code.claude.com/docs/en/headless) · [Hooks](https://code.claude.com/docs/en/hooks) · [Skills](https://code.claude.com/docs/en/skills) · [MCP](https://code.claude.com/docs/en/mcp) · [Plugins](https://code.claude.com/docs/en/plugins/overview) · [Cloud scheduled tasks](https://code.claude.com/docs/en/routines) · [Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview)
 - [Computer use tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool) · [Claude Cookbook](https://platform.claude.com/cookbook) · [Zapier MCP](https://docs.zapier.com/mcp/home)
 
 ### Repos
@@ -404,4 +471,4 @@ For things that must never happen, use a `PreToolUse` hook that exits with code 
 
 ### Coverage
 
-Researched on November 23, 2026 from Anthropic's docs and posts, vendor docs (Zapier, n8n), GitHub and news coverage. Every link above returned HTTP 200 (or a reachable git remote) on that date. Reddit was blocked from the research environment, so no Reddit threads are listed; r/ClaudeAI and r/ClaudeCode are worth checking yourself. Figures are as reported by their sources. Names change fast (routines became cloud scheduled tasks), so check the linked doc before you rely on a flag.
+Researched on November 23, 2026 from Anthropic's docs and posts, vendor docs (Zapier, n8n), GitHub and news coverage. Links re-checked on November 24, 2026 with `scripts/check_links.py`. The index is tested with `evals/questions.json` and `scripts/eval_index.py`: it scored 16/20 before section 10 was added and 20/20 after. Reddit was blocked from the research environment, so no Reddit threads are listed; r/ClaudeAI and r/ClaudeCode are worth checking yourself. Figures are as reported by their sources. Names change fast (routines became cloud scheduled tasks), so check the linked doc before you rely on a flag.

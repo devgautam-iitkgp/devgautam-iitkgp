@@ -1,0 +1,232 @@
+{
+ "questions": [
+  {
+   "id": "a01",
+   "q": "Run Claude non-interactively in CI and parse the result",
+   "must_match": [
+    "claude -p",
+    "output-format"
+   ]
+  },
+  {
+   "id": "a02",
+   "q": "Block dangerous commands no matter what the model decides",
+   "must_match": [
+    "exit 2"
+   ]
+  },
+  {
+   "id": "a03",
+   "q": "Run a job while my laptop is closed",
+   "must_match": [
+    "Cloud scheduled task"
+   ]
+  },
+  {
+   "id": "a04",
+   "q": "Cheapest way to process 10,000 documents",
+   "must_match": [
+    "Batch",
+    "50"
+   ]
+  },
+  {
+   "id": "a05",
+   "q": "Keep Claude working until the tests pass",
+   "must_match": [
+    "/goal"
+   ]
+  },
+  {
+   "id": "a06",
+   "q": "Too many tools are eating my context",
+   "must_match": [
+    "defer_loading"
+   ]
+  },
+  {
+   "id": "a07",
+   "q": "Build an agent that learns from its mistakes",
+   "must_match": [
+    "claude-reflect",
+    "eval"
+   ]
+  },
+  {
+   "id": "a08",
+   "q": "Connect Claude to thousands of apps without code",
+   "must_match": [
+    "Zapier"
+   ]
+  },
+  {
+   "id": "a09",
+   "q": "Make an n8n workflow callable by Claude",
+   "must_match": [
+    "MCP Server Trigger"
+   ]
+  },
+  {
+   "id": "a10",
+   "q": "Rule of thumb against prompt injection",
+   "must_match": [
+    "untrusted"
+   ]
+  },
+  {
+   "id": "a11",
+   "q": "Is multi-agent worth the cost?",
+   "must_match": [
+    "15x|15×",
+    "90\\.2"
+   ]
+  },
+  {
+   "id": "a12",
+   "q": "Keep progress across many sessions",
+   "must_match": [
+    "progress",
+    "init\\.sh"
+   ]
+  },
+  {
+   "id": "a13",
+   "q": "Host an agent without running infrastructure",
+   "must_match": [
+    "Managed Agents",
+    "0\\.08"
+   ]
+  },
+  {
+   "id": "a14",
+   "q": "Reproducible CI runs that ignore local config",
+   "must_match": [
+    "--bare"
+   ]
+  },
+  {
+   "id": "a15",
+   "q": "How do I add an MCP server to Claude Code?",
+   "must_match": [
+    "claude mcp add"
+   ]
+  },
+  {
+   "id": "a16",
+   "q": "How do I write and install a skill so Claude loads it automatically?",
+   "must_match": [
+    "SKILL\\.md",
+    "\\.claude/skills"
+   ]
+  },
+  {
+   "id": "a17",
+   "q": "How do I make a reusable slash command or subagent file?",
+   "must_match": [
+    "\\.claude/(commands|agents)"
+   ]
+  },
+  {
+   "id": "a18",
+   "q": "How do I install a plugin from a marketplace?",
+   "must_match": [
+    "/plugin marketplace add|plugin install"
+   ]
+  },
+  {
+   "id": "a19",
+   "q": "Where do project-wide instructions for every run go?",
+   "must_match": [
+    "CLAUDE\\.md"
+   ]
+  },
+  {
+   "id": "a20",
+   "q": "Track what a scripted run cost",
+   "must_match": [
+    "total_cost_usd"
+   ]
+  },
+  {
+   "id": "h01",
+   "q": "Get output that matches a JSON schema",
+   "must_match": [
+    "json-schema"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h02",
+   "q": "Change 20 files in parallel, one PR each",
+   "must_match": [
+    "/batch"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h03",
+   "q": "Which model should do the cheap classification step?",
+   "must_match": [
+    "Haiku"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h04",
+   "q": "Pass a big diff into a review script",
+   "must_match": [
+    "pipe|stdin"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h05",
+   "q": "Run Claude when a GitHub PR is opened",
+   "must_match": [
+    "pull_request\\.opened|@claude"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h06",
+   "q": "Stop a run that is spending too much",
+   "must_match": [
+    "max-budget-usd"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h07",
+   "q": "Drive a desktop app that has no API",
+   "must_match": [
+    "computer_toolset|computer use"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h08",
+   "q": "Example of agents building something huge",
+   "must_match": [
+    "compiler"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h09",
+   "q": "Share MCP servers with my team via git",
+   "must_match": [
+    ".mcp\\.json"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h10",
+   "q": "Where do I find community hooks and commands?",
+   "must_match": [
+    "awesome-claude-code"
+   ],
+   "heldout": true
+  }
+ ],
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md. heldout=true questions were written after the fixes, to check the index generalizes. Keyword presence is a proxy, not proof the answer is complete."
+}
