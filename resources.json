@@ -1,6 +1,6 @@
 {
- "checked": "2026-11-23",
- "verified_note": "v = opened the page/repo on the checked date; s = from search results or listing sites only",
+ "checked": "2026-11-24",
+ "verified_note": "v = opened the page/repo on the checked date; s = from search results or listing sites only; 2026-11-24: every URL re-checked by scripts/check_links.py (403/429 from bot-blocking sites confirmed by other routes)",
  "categories": {
   "official": "Official (Blender Lab + Claude connector)",
   "server": "Free MCP servers and bridges",
@@ -61,7 +61,7 @@
    "name": "MCP for Blender (ahujasid, formerly blender-mcp)",
    "url": "https://github.com/ahujasid/mcp-for-blender",
    "stars": "35.4k",
-   "note": "MIT. The community default. Blender 3.0+. Poly Haven, Sketchfab, Poly Pizza, Rodin, Hunyuan3D, Tripo, screenshots. Arbitrary Python on by default (safe mode opt-in). Install: claude mcp add blender uvx mcp-for-blender. Discord: discord.gg/SNqPn4TcKQ",
+   "note": "MIT. The community default. Blender 3.0+. Poly Haven, Sketchfab, Poly Pizza, Rodin, Hunyuan3D, Tripo, screenshots. Arbitrary Python on by default (safe mode opt-in). Install: claude mcp add blender uvx mcp-for-blender, or one command: uvx mcp-for-blender setup. PyPI package renamed from blender-mcp; old uvx blender-mcp still works. Viewport screenshot tool lets Claude see the scene. Discord: discord.gg/SNqPn4TcKQ",
    "v": "v"
   },
   {
@@ -137,7 +137,7 @@
    "cat": "server",
    "name": "CommonSenseMachines/blender-mcp",
    "url": "https://github.com/CommonSenseMachines/blender-mcp",
-   "note": "CSM.ai text-to-3D, asset search, text-to-animation with auto-rig. Repo page could not be opened on check date.",
+   "note": "CSM.ai text-to-3D, asset search, text-to-animation with auto-rig. GitHub repo unreachable on 2026-11-24 (deleted or private); listings on glama/mcpservers still show it. Treat as unavailable.",
    "v": "s"
   },
   {
@@ -249,8 +249,9 @@
    "cat": "skill",
    "name": "Hermes Agent blender-mcp skill",
    "url": "https://tessl.io/registry/skills/github/NousResearch/hermes-agent/blender-mcp/review",
-   "note": "bpy recipes + pitfalls references; standard SKILL.md.",
-   "v": "s"
+   "note": "Page returned 410 Gone on 2026-11-24. Kept for the record only; the skill may still be in NousResearch/hermes-agent.",
+   "v": "s",
+   "gone": true
   },
   {
    "cat": "skill",
@@ -605,8 +606,8 @@
   {
    "cat": "community",
    "name": "GitHub Discussions (community server)",
-   "url": "https://github.com/ahujasid/blender-mcp/discussions",
-   "note": "Q&A and showcase.",
+   "url": "https://github.com/ahujasid/mcp-for-blender/discussions",
+   "note": "Q&A and showcase. Repo renamed from blender-mcp; old links redirect.",
    "v": "s"
   },
   {
@@ -685,6 +686,20 @@
    "url": "https://macrumors.com/2026/04/28/claude-creative-tool-connectors",
    "note": "28 Apr 2026.",
    "v": "s"
+  },
+  {
+   "cat": "official",
+   "name": "Blender command-line arguments (manual)",
+   "url": "https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html",
+   "note": "Headless automation: -b/--background, -P/--python script, --python-expr, --python-exit-code N (fail on Python error), -o/--render-output (// = relative to .blend), -f frame, -a animation, args after -- reach sys.argv.",
+   "v": "v"
+  },
+  {
+   "cat": "read",
+   "name": "How to automate with Claude (patterns directory)",
+   "url": "https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md",
+   "note": "Sister directory: headless claude -p, hooks, loops, scheduling, evals, guardrails. Use it to automate Blender jobs.",
+   "v": "v"
   }
  ],
  "fixes": [

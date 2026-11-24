@@ -73,6 +73,19 @@ full = [
     "- Every option: one Blender MCP add-on at a time (port 9876); Claude Desktop or Claude Code only, never claude.ai web; work on copies, since all of them can run arbitrary Python.",
     "",
 ]
+full += [
+    "## Automate Blender with Claude (patterns)",
+    "",
+    "General automation patterns (headless runs, hooks, loops, scheduling, evals, guardrails) live in the sister directory: https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md. Applied to Blender:",
+    "",
+    "- **Live or headless.** MCP drives an open Blender through the add-on (port 9876): good for interactive scene work. For batch jobs and anything unattended, skip MCP: Claude writes a bpy script and runs `blender -b copy.blend --python-exit-code 1 -P job.py -- <your args>`. `--python-exit-code 1` makes a Python error exit non-zero, so a script or loop can catch it; arguments after `--` reach the script through `sys.argv`.",
+    "- **Render from the command line.** `-o //renders/frame_#### -f 1` renders one frame (`//` = relative to the .blend); `-a` renders the whole animation.",
+    "- **Let Claude check its own work.** Render a small preview PNG (or use the community server's viewport screenshot tool), have Claude read the image and judge it against the brief, and loop until it passes: the evaluator-optimizer pattern. BlenderGym found models weaker at verifying than generating, so give the judge concrete criteria (object count, camera framing, material names).",
+    "- **Run it unattended.** `claude -p \"<job>\" --allowedTools \"Bash(blender -b *),Read,Write\"` from cron or a Desktop scheduled task when Blender is on your machine. Cloud scheduled tasks and GitHub Actions work only if the runner installs Blender first.",
+    "- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; add a PreToolUse hook on the Blender code tool (for example a matcher like `mcp__blender__.*`) that blocks Python importing os, subprocess or shutil.",
+    "- **Make it reusable.** Once a prompt plus script works, save it as a skill (`~/.claude/skills/<name>/SKILL.md`) so `/name` reruns it.",
+    "",
+]
 for key, title in cats.items():
     items = [r for r in res if r["cat"] == key]
     if not items:
@@ -114,6 +127,8 @@ A checked list of {n} resources for driving Blender with Claude (and other MCP c
 
 - **AI agents:** read [AGENT_INDEX.md](AGENT_INDEX.md) first (compact, one line per resource). Machine-readable: [resources.json](resources.json).
 - **People:** browse [DIRECTORY.md](DIRECTORY.md).
+- **Install as a Claude Code skill** (loads by itself when Blender comes up): `git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp` (update later with `git -C ~/.claude/skills/blender-claude-mcp pull`).
+- **Quality checks:** `python3 scripts/eval_index.py AGENT_INDEX.md evals/questions.json` (does the index answer real questions?) and `python3 scripts/check_links.py resources.json` (are links alive?).
 
 Last checked: {checked}. Entries marked verified were opened on that date; others come from search results or listing sites.
 

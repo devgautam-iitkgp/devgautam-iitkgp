@@ -1,8 +1,10 @@
 # Agent index: Blender + Claude MCP
 
+Install as a skill (auto-loads on Blender questions): git clone -b blender-claude-mcp --depth 1 https://github.com/devgautam-iitkgp/devgautam-iitkgp ~/.claude/skills/blender-claude-mcp
+
 For AI sessions: read only this file (about 3k tokens; the Start here block alone is about 250). Open DIRECTORY.md only for full notes; resources.json is the machine-readable source of truth.
 
-Checked 2026-11-23. One line per resource: name | url | stars | short note. * = page opened on check date; others from search or listing sites. Star counts drift; re-check before quoting.
+Checked 2026-11-23; links re-checked 2026-11-24. One line per resource: name | url | stars | short note. * = page opened on check date; others from search or listing sites. Star counts drift; re-check before quoting.
 
 ## Decide
 - Official Blender Lab connector: analysis, cleanup, batch scripts, node explanations. Blender 5.1+. Claude Desktop or Claude Code only.
@@ -13,7 +15,7 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 ## Start here (stop reading if this answers you)
 1. Official setup: https://academy.claude.com/tutorials/using-the-blender-connector-in-claude
 2. Official add-on: https://www.blender.org/lab/mcp-server/
-3. Community server: https://github.com/ahujasid/mcp-for-blender  (claude mcp add blender uvx mcp-for-blender)
+3. Community server: https://github.com/ahujasid/mcp-for-blender  (claude mcp add blender uvx mcp-for-blender; or one command: uvx mcp-for-blender setup)
    Official server in Claude Code: claude mcp add blender -- uvx --from "git+https://projects.blender.org/lab/blender_mcp.git#subdirectory=mcp" blender-mcp
 4. Biggest skill pack: https://github.com/arjun988/blender-skills  (needs community server)
 5. Skills for official server: https://github.com/ra100/blender-claude-plugin
@@ -21,7 +23,17 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 7. Honest limits: https://www.mindstudio.ai/blog/claude-blender-mcp-real-world-performance
 8. Best video (official + Claude Code): https://www.youtube.com/watch?v=b5F-yNG4lds
 9. Research baseline: https://arxiv.org/abs/2504.01786 (BlenderGym)
-10. Fixes: see Top fixes at the end
+10. Automating Blender (headless, self-checks, schedules): see Automate below
+11. Fixes: see Top fixes at the end
+
+## Automate (patterns; general ones: https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md)
+- live vs headless: MCP drives an open Blender (port 9876). Batch/unattended: skip MCP, Claude writes bpy and runs `blender -b copy.blend --python-exit-code 1 -P job.py -- args` (non-zero exit on Python error; args after -- in sys.argv)
+- render: `-o //renders/frame_#### -f 1` (// = next to .blend) or `-a` for animation
+- self-check: render preview PNG or community viewport screenshot -> Claude reads image, judges vs concrete criteria -> loop (evaluator-optimizer; BlenderGym: models verify worse than they generate)
+- unattended: `claude -p "<job>" --allowedTools "Bash(blender -b *),Read,Write"` via cron/Desktop scheduled task; cloud tasks/GitHub Actions only if runner installs Blender
+- guardrails: .blend copies; outputs in git; PreToolUse hook on Blender code tool (matcher like mcp__blender__.*) blocking os/subprocess/shutil
+- reuse: save a working prompt+script as ~/.claude/skills/<name>/SKILL.md
+- CLI manual: https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html
 
 ## Official
 - Blender Lab MCP Server page | https://www.blender.org/lab/mcp-server/ | docs + add-on install link (drag in twice). Blender 5.1+, Allow Online Access
@@ -32,7 +44,7 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 - Official via Claude Code (Qiita) | https://qiita.com/zukka/items/6492cf4db31e374850e2 | plain `uvx blender-mcp` = COMMUNITY server (name clash)
 
 ## Free servers and bridges
-- MCP for Blender (ahujasid)* | https://github.com/ahujasid/mcp-for-blender | 35.4k | MIT, 3.0+, Poly Haven/Sketchfab/Rodin/Hunyuan3D/Tripo; Python on by default; Discord discord.gg/SNqPn4TcKQ
+- MCP for Blender (ahujasid)* | https://github.com/ahujasid/mcp-for-blender | 35.4k | MIT, 3.0+, Poly Haven/Sketchfab/Rodin/Hunyuan3D/Tripo; Python on by default; viewport screenshots; package renamed from blender-mcp (old name still works); Discord discord.gg/SNqPn4TcKQ
 - blenderwright (was blend-ai)* | https://github.com/jabberwock/blend-ai | 187 | 276 tools, 5.2 LTS only, uvx blenderwright
 - blender-open-mcp* | https://github.com/dhakalnirajan/blender-open-mcp | 114 | local LLMs: Ollama, LM Studio, llama.cpp, OpenAI-compatible
 - dcc-mcp-blender* | https://github.com/dcc-mcp/dcc-mcp-blender | 53 | typed tools, 4.5+, pip install dcc-mcp-blender
@@ -42,7 +54,7 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 - Blender MCP Plus | https://glama.ai/mcp/servers/dq930e7q6b | official add-on + Poly Haven, one port
 - sandraschi/blender-mcp | https://glama.ai/mcp/servers/sandraschi/blender-mcp | 80+ tools, .mcpb install, VRChat checks
 - hardened fork (soozs1) | https://glama.ai/mcp/servers/soozs1/Blender-MCP | no telemetry, token auth, loopback only
-- CommonSenseMachines | https://github.com/CommonSenseMachines/blender-mcp | text-to-3D, auto-rig (unverified)
+- CommonSenseMachines | https://github.com/CommonSenseMachines/blender-mcp | text-to-3D, auto-rig; repo UNREACHABLE 2026-11-24
 - Scenario for Blender | https://www.claudemarketplace.net/mcp/blender-plugin | AI textures/HDRI + MCP, paid account
 - blender-ai-mcp* | https://github.com/PatrykIti/blender-ai-mcp | 67 | ARCHIVED, skip
 
@@ -61,7 +73,6 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 - scenario-labs/skills | https://github.com/scenario-labs/skills | blender-expert router, hard-surface, rigging, sculpt
 - Dev-GOM blender-toolkit | https://github.com/Dev-GOM/claude-code-marketplace | WebSocket, Mixamo retarget
 - vladmdgolam blender-mcp | https://github.com/vladmdgolam/agent-skills | MCP tools vs Python guidance
-- Hermes blender-mcp | https://tessl.io/registry/skills/github/NousResearch/hermes-agent/blender-mcp/review | bpy recipes, pitfalls
 - TMHSDigital | https://github.com/TMHSDigital/Blender-Developer-Tools | add-on dev skills, 5.1
 - SamuelAsherRivello | https://skillsmp.com/ar/creators/samuelasherrivello/ai-skills-blender | ~28 asset skills
 - animated-asset-skill | https://github.com/rehan-remade/animated-asset-skill | prompt to rigged voxel creature
@@ -120,7 +131,7 @@ Checked 2026-11-23. One line per resource: name | url | stars | short note. * = 
 - devtalk early MCP thread | https://devtalk.blender.org/t/i-would-love-to-help-write-the-mcp-for-blender-can-i-get-involved-in-that/43367
 - BlenderArtists launch debate | https://blenderartists.org/t/from-blender-mcp-to-3d-agent-anthropic-partners-with-blender-claude-ai-connector-now-official/1639106
 - Polycount pipeline thread | https://polycount.com/discussion/238781/blendermcp-pro-ai-pipeline-tool-for-blender-asset-validation-batch-export-game-engine-prep
-- GitHub Discussions | https://github.com/ahujasid/blender-mcp/discussions
+- GitHub Discussions | https://github.com/ahujasid/mcp-for-blender/discussions
 - X reusable prompt | https://x.com/rewind02/status/2116918597658305001
 - X A-Z animation guide | https://x.com/kirillk_web3/status/2114393429874479530
 - X original launch | https://x.com/sidahuj/status/1899460492999184534

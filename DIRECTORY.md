@@ -1,6 +1,6 @@
 # Blender + Claude MCP: full directory
 
-Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub page when verified. AI agents: use AGENT_INDEX.md (or the doc's Agent index tab) instead; it is shorter.
+Checked 2026-11-24. Verified = page opened that day. Stars from the live GitHub page when verified. AI agents: use AGENT_INDEX.md (or the doc's Agent index tab) instead; it is shorter.
 
 ## Quick pick
 
@@ -9,6 +9,17 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 - **Fully local models**: blender-open-mcp. **No MCP at all**: Claude Code + `blender --background --python script.py`.
 - **Add a skill pack**: arjun988/blender-skills (community server, game assets) or ra100/blender-claude-plugin (official server).
 - Every option: one Blender MCP add-on at a time (port 9876); Claude Desktop or Claude Code only, never claude.ai web; work on copies, since all of them can run arbitrary Python.
+
+## Automate Blender with Claude (patterns)
+
+General automation patterns (headless runs, hooks, loops, scheduling, evals, guardrails) live in the sister directory: https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md. Applied to Blender:
+
+- **Live or headless.** MCP drives an open Blender through the add-on (port 9876): good for interactive scene work. For batch jobs and anything unattended, skip MCP: Claude writes a bpy script and runs `blender -b copy.blend --python-exit-code 1 -P job.py -- <your args>`. `--python-exit-code 1` makes a Python error exit non-zero, so a script or loop can catch it; arguments after `--` reach the script through `sys.argv`.
+- **Render from the command line.** `-o //renders/frame_#### -f 1` renders one frame (`//` = relative to the .blend); `-a` renders the whole animation.
+- **Let Claude check its own work.** Render a small preview PNG (or use the community server's viewport screenshot tool), have Claude read the image and judge it against the brief, and loop until it passes: the evaluator-optimizer pattern. BlenderGym found models weaker at verifying than generating, so give the judge concrete criteria (object count, camera framing, material names).
+- **Run it unattended.** `claude -p "<job>" --allowedTools "Bash(blender -b *),Read,Write"` from cron or a Desktop scheduled task when Blender is on your machine. Cloud scheduled tasks and GitHub Actions work only if the runner installs Blender first.
+- **Guardrails.** Work on copies of .blend files; keep outputs in git or versioned folders; add a PreToolUse hook on the Blender code tool (for example a matcher like `mcp__blender__.*`) that blocks Python importing os, subprocess or shutil.
+- **Make it reusable.** Once a prompt plus script works, save it as a skill (`~/.claude/skills/<name>/SKILL.md`) so `/name` reruns it.
 
 ## Official (Blender Lab + Claude connector)
 
@@ -20,12 +31,13 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 | [Anthropic tutorial (Claude Academy)](https://academy.claude.com/tutorials/using-the-blender-connector-in-claude) | Official steps + 4 example uses. Says Blender 4.2+, but the add-on manifest requires 5.1+. | yes |
 | [Claude for Creative Work announcement](https://www.anthropic.com/news/claude-for-creative-work) | 28 Apr 2026 launch of 9 creative connectors incl. Blender. | no |
 | [Official server via Claude Code](https://qiita.com/zukka/items/6492cf4db31e374850e2) | uvx --from "git+https://projects.blender.org/lab/blender_mcp.git#subdirectory=mcp" blender-mcp  (plain `uvx blender-mcp` runs the COMMUNITY server: same command name). | no |
+| [Blender command-line arguments (manual)](https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html) | Headless automation: -b/--background, -P/--python script, --python-expr, --python-exit-code N (fail on Python error), -o/--render-output (// = relative to .blend), -f frame, -a animation, args after -- reach sys.argv. | yes |
 
 ## Free MCP servers and bridges
 
 | Name | Stars | Notes | Verified |
 | --- | --- | --- | --- |
-| [MCP for Blender (ahujasid, formerly blender-mcp)](https://github.com/ahujasid/mcp-for-blender) | 35.4k | MIT. The community default. Blender 3.0+. Poly Haven, Sketchfab, Poly Pizza, Rodin, Hunyuan3D, Tripo, screenshots. Arbitrary Python on by default (safe mode opt-in). Install: claude mcp add blender uvx mcp-for-blender. Discord: discord.gg/SNqPn4TcKQ | yes |
+| [MCP for Blender (ahujasid, formerly blender-mcp)](https://github.com/ahujasid/mcp-for-blender) | 35.4k | MIT. The community default. Blender 3.0+. Poly Haven, Sketchfab, Poly Pizza, Rodin, Hunyuan3D, Tripo, screenshots. Arbitrary Python on by default (safe mode opt-in). Install: claude mcp add blender uvx mcp-for-blender, or one command: uvx mcp-for-blender setup. PyPI package renamed from blender-mcp; old uvx blender-mcp still works. Viewport screenshot tool lets Claude see the scene. Discord: discord.gg/SNqPn4TcKQ | yes |
 | [blenderwright (formerly blend-ai)](https://github.com/jabberwock/blend-ai) | 187 | MIT. 276 tools across 32 modules. Blender 5.2 LTS only. uvx blenderwright | yes |
 | [blender-open-mcp](https://github.com/dhakalnirajan/blender-open-mcp) | 114 | MIT. Local/any LLM backend: Ollama, LM Studio, llama.cpp, OpenAI-compatible (vLLM, OpenRouter, Groq...). pip install -e from clone. | yes |
 | [dcc-mcp-blender](https://github.com/dcc-mcp/dcc-mcp-blender) | 53 | MIT. Add-on embeds an MCP server with typed tools (mesh, UV, rig, materials, render). Blender 4.5+. pip install dcc-mcp-blender | yes |
@@ -35,7 +47,7 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 | [Blender MCP Plus](https://glama.ai/mcp/servers/dq930e7q6b) | - | Extends the OFFICIAL add-on with a Poly Haven library; one add-on, one port. Tested on 5.2.2. | no |
 | [sandraschi/blender-mcp](https://glama.ai/mcp/servers/sandraschi/blender-mcp) | - | 80+ tools, .mcpb drag-in install for Claude Desktop, VRM/VRChat validation. | no |
 | [Security-hardened fork (soozs1)](https://glama.ai/mcp/servers/soozs1/Blender-MCP) | - | Fork of ahujasid with telemetry removed, token auth, loopback-only binding. | no |
-| [CommonSenseMachines/blender-mcp](https://github.com/CommonSenseMachines/blender-mcp) | - | CSM.ai text-to-3D, asset search, text-to-animation with auto-rig. Repo page could not be opened on check date. | no |
+| [CommonSenseMachines/blender-mcp](https://github.com/CommonSenseMachines/blender-mcp) | - | CSM.ai text-to-3D, asset search, text-to-animation with auto-rig. GitHub repo unreachable on 2026-11-24 (deleted or private); listings on glama/mcpservers still show it. Treat as unavailable. | no |
 | [Scenario for Blender](https://www.claudemarketplace.net/mcp/blender-plugin) | - | Blender 5.0+ extension: AI images/video/3D/PBR/HDRI + local MCP server. Needs Scenario account. | no |
 | [blender-ai-mcp (ARCHIVED)](https://github.com/PatrykIti/blender-ai-mcp) | 67 | Apache-2.0. README says archived/unmaintained. Listed only because older guides recommend it. | yes |
 
@@ -60,7 +72,7 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 | [scenario-labs/skills (Blender experts)](https://github.com/scenario-labs/skills) | - | scenario-blender-expert router + hard-surface, rigging, sculpting skills; headless or via MCP; tests pass on 5.2.1. | no |
 | [Dev-GOM blender-toolkit](https://github.com/Dev-GOM/claude-code-marketplace) | - | Experimental plugin: WebSocket control (not MCP), Mixamo retargeting. /plugin install blender-toolkit@dev-gom-plugins | no |
 | [vladmdgolam blender-mcp skill](https://github.com/vladmdgolam/agent-skills) | - | When to use MCP tools vs Python; headless export. npx skills add vladmdgolam/agent-skills --skill blender-mcp | no |
-| [Hermes Agent blender-mcp skill](https://tessl.io/registry/skills/github/NousResearch/hermes-agent/blender-mcp/review) | - | bpy recipes + pitfalls references; standard SKILL.md. | no |
+| [Hermes Agent blender-mcp skill](https://tessl.io/registry/skills/github/NousResearch/hermes-agent/blender-mcp/review) | - | Page returned 410 Gone on 2026-11-24. Kept for the record only; the skill may still be in NousResearch/hermes-agent. | no |
 | [TMHSDigital/Blender-Developer-Tools](https://github.com/TMHSDigital/Blender-Developer-Tools) | - | 8 skills, rules, snippets for add-on dev; Blender 5.1 (4.5 LTS fallback). | no |
 | [SamuelAsherRivello/ai-skills-blender](https://skillsmp.com/ar/creators/samuelasherrivello/ai-skills-blender) | - | ~28 skills for editable assets via Blender MCP (image-to-model, relief). | no |
 | [rehan-remade/animated-asset-skill](https://github.com/rehan-remade/animated-asset-skill) | - | One sentence to rigged animated voxel creature: fal + Hunyuan-3D + headless Blender to glTF. | no |
@@ -107,6 +119,7 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 | [Best MCP servers for game dev 2026 — Sprixen](https://sprixen.com/blog/best-mcp-servers-for-game-development-2026) | Ranking with API-read stars (1 Nov 2026). | no |
 | [best-of-mcp-servers](https://github.com/tolkonepiu/best-of-mcp-servers) | Weekly-ranked MCP list (Art & Culture section). | no |
 | [Top Claude skills for 3D and game dev — Snyk](https://snyk.io/articles/top-claude-skills-3d-modeling-game-dev-shader-programming) | Skills vs MCP explained; install paths; review skills before installing. | no |
+| [How to automate with Claude (patterns directory)](https://raw.githubusercontent.com/devgautam-iitkgp/devgautam-iitkgp/claude-automation/AGENT_INDEX.md) | Sister directory: headless claude -p, hooks, loops, scheduling, evals, guardrails. Use it to automate Blender jobs. | yes |
 
 ## Research papers and benchmarks
 
@@ -131,7 +144,7 @@ Checked 2026-11-23. Verified = page opened that day. Stars from the live GitHub 
 | [Blender devtalk: helping write the MCP](https://devtalk.blender.org/t/i-would-love-to-help-write-the-mcp-for-blender-can-i-get-involved-in-that/43367) | Nov 2025 thread before the official server. | no |
 | [BlenderArtists: connector launch thread](https://blenderartists.org/t/from-blender-mcp-to-3d-agent-anthropic-partners-with-blender-claude-ai-connector-now-official/1639106) | Heated for/against AI debate. | no |
 | [Polycount: BlenderMCP Pro pipeline thread](https://polycount.com/discussion/238781/blendermcp-pro-ai-pipeline-tool-for-blender-asset-validation-batch-export-game-engine-prep) | Pipeline-focused discussion. | no |
-| [GitHub Discussions (community server)](https://github.com/ahujasid/blender-mcp/discussions) | Q&A and showcase. | no |
+| [GitHub Discussions (community server)](https://github.com/ahujasid/mcp-for-blender/discussions) | Q&A and showcase. Repo renamed from blender-mcp; old links redirect. | no |
 | [X: reusable modeling prompt (@rewind02)](https://x.com/rewind02/status/2116918597658305001) | Inspect, silhouette, geometry, materials, previews, self-correct. | no |
 | [X: Claude + Blender A-Z animation guide (@kirillk_web3)](https://x.com/kirillk_web3/status/2114393429874479530) | Sandbox route vs official connector route. | no |
 | [X: original launch (@sidahuj)](https://x.com/sidahuj/status/1899460492999184534) | 11 Mar 2025 dragon demo. | no |
