@@ -1,0 +1,340 @@
+{
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md (case-insensitive). heldout=true questions were written after the index was finished and were not used to edit it. Keyword presence is a proxy, not proof the answer is complete.",
+ "max_tokens": 4000,
+ "questions": [
+  {
+   "id": "v01",
+   "q": "Which TTS model for long documentary narration?",
+   "must_match": [
+    "Eleven v4",
+    "Gemini 3\\.8 Flash TTS"
+   ]
+  },
+  {
+   "id": "v02",
+   "q": "How to add emphasis to one word in ElevenLabs v4",
+   "must_match": [
+    "CAPITALS",
+    "one word"
+   ]
+  },
+  {
+   "id": "v03",
+   "q": "How to add a pause in Eleven v4",
+   "must_match": [
+    "no SSML break|SSML break tags",
+    "ellips|punctuation"
+   ]
+  },
+  {
+   "id": "v04",
+   "q": "Max pause with the break tag on older models",
+   "must_match": [
+    "break time",
+    "3 s"
+   ]
+  },
+  {
+   "id": "v05",
+   "q": "Gemini TTS tags for pace and pauses",
+   "must_match": [
+    "\\[slow\\]",
+    "\\[long pause\\]"
+   ]
+  },
+  {
+   "id": "v06",
+   "q": "Numbers read wrongly by the voice",
+   "must_match": [
+    "[Nn]ormalise",
+    "forty-two dollars"
+   ]
+  },
+  {
+   "id": "v07",
+   "q": "Fix mispronounced names",
+   "must_match": [
+    "IPA",
+    "pronunciation dictionar"
+   ]
+  },
+  {
+   "id": "v08",
+   "q": "How many takes per line?",
+   "must_match": [
+    "3.5 takes|3–5 for"
+   ]
+  },
+  {
+   "id": "v09",
+   "q": "How to choose between takes",
+   "must_match": [
+    "accuracy",
+    "wrong stress",
+    "artefacts"
+   ]
+  },
+  {
+   "id": "v10",
+   "q": "Regenerate one word in ElevenLabs Studio?",
+   "must_match": [
+    "whole phrase",
+    "Generation History"
+   ]
+  },
+  {
+   "id": "v11",
+   "q": "Joins between narration chunks are audible",
+   "must_match": [
+    "room tone",
+    "crossfade"
+   ]
+  },
+  {
+   "id": "v12",
+   "q": "Automatically catch skipped or misread words",
+   "must_match": [
+    "speech-to-text|STT",
+    "diff"
+   ]
+  },
+  {
+   "id": "v13",
+   "q": "How much audio for a voice clone?",
+   "must_match": [
+    "1.2 min",
+    "30.180 min"
+   ]
+  },
+  {
+   "id": "v14",
+   "q": "Nano Banana stills come out rotated",
+   "must_match": [
+    "EXIF",
+    "rotate pixels"
+   ]
+  },
+  {
+   "id": "v15",
+   "q": "Remove the Gemini sparkle watermark",
+   "must_match": [
+    "Media Watermark",
+    "SynthID"
+   ]
+  },
+  {
+   "id": "v16",
+   "q": "Use the same character across Flow projects",
+   "must_match": [
+    "reference kit",
+    "across projects"
+   ]
+  },
+  {
+   "id": "v17",
+   "q": "How many reference images does Nano Banana take?",
+   "must_match": [
+    "14 reference"
+   ]
+  },
+  {
+   "id": "v18",
+   "q": "Veo 3.1 clip lengths",
+   "must_match": [
+    "4, 6, 8 s",
+    "8 s only"
+   ]
+  },
+  {
+   "id": "v19",
+   "q": "Keep one visual style across a series",
+   "must_match": [
+    "style block",
+    "character sheets"
+   ]
+  },
+  {
+   "id": "v20",
+   "q": "AI images look fake — what to do",
+   "must_match": [
+    "film stock|Portra",
+    "grain"
+   ]
+  },
+  {
+   "id": "v21",
+   "q": "Can I make realistic AI footage of a historical event?",
+   "must_match": [
+    "reconstruction",
+    "label"
+   ]
+  },
+  {
+   "id": "v22",
+   "q": "Structure for a documentary video",
+   "must_match": [
+    "central question",
+    "midpoint"
+   ]
+  },
+  {
+   "id": "v23",
+   "q": "How long should each act be?",
+   "must_match": [
+    "25/50/25"
+   ]
+  },
+  {
+   "id": "v24",
+   "q": "Script format for narrated documentary",
+   "must_match": [
+    "A/V",
+    "two-column"
+   ]
+  },
+  {
+   "id": "v25",
+   "q": "How many words for a 20 minute video?",
+   "must_match": [
+    "2,600.3,000|130.160 words"
+   ]
+  },
+  {
+   "id": "v26",
+   "q": "Should an LLM write my script facts?",
+   "must_match": [
+    "unverified facts|invented facts",
+    "source log"
+   ]
+  },
+  {
+   "id": "v27",
+   "q": "How loud should music be under narration?",
+   "must_match": [
+    "18.24 dB below"
+   ]
+  },
+  {
+   "id": "v28",
+   "q": "Music ducking setup",
+   "must_match": [
+    "sidechain",
+    "auto-ducking"
+   ]
+  },
+  {
+   "id": "v29",
+   "q": "Loudness target for YouTube master",
+   "must_match": [
+    "14 LUFS",
+    "1 dBTP"
+   ]
+  },
+  {
+   "id": "v30",
+   "q": "Narration processing chain",
+   "must_match": [
+    "high-pass",
+    "de-esser",
+    "compression"
+   ]
+  },
+  {
+   "id": "v31",
+   "q": "What sound layers does a documentary need?",
+   "must_match": [
+    "ambience",
+    "Foley",
+    "spot effects"
+   ]
+  },
+  {
+   "id": "v32",
+   "q": "Keep ElevenLabs prosody consistent across API calls",
+   "must_match": [
+    "request stitching|request IDs",
+    "2 hours"
+   ]
+  },
+  {
+   "id": "h01",
+   "q": "Does OpenAI TTS allow voice cloning?",
+   "must_match": [
+    "preset voices"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h02",
+   "q": "Netflix loudness spec",
+   "must_match": [
+    "27 LKFS"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h03",
+   "q": "Can I attach a voice reference to a frames-to-video clip in Flow?",
+   "must_match": [
+    "Voice reference only with ingredients"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h04",
+   "q": "Video is long and tiring to listen to",
+   "must_match": [
+    "fatigue|dense and sparse"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h05",
+   "q": "Gemini Omni clip length",
+   "must_match": [
+    "15 s|10 s"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h06",
+   "q": "Where should music cues change?",
+   "must_match": [
+    "story turns"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h07",
+   "q": "Is request stitching available on Eleven v3?",
+   "must_match": [
+    "not on Eleven v3"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h08",
+   "q": "What does Gemini 3.8 TTS return by default?",
+   "must_match": [
+    "WAV"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h09",
+   "q": "Mono check needed?",
+   "must_match": [
+    "mono"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h10",
+   "q": "What to do with whooshes",
+   "must_match": [
+    "remove half"
+   ],
+   "heldout": true
+  }
+ ]
+}

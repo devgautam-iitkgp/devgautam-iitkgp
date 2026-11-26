@@ -1,0 +1,613 @@
+{
+ "title": "Video Craft Directory",
+ "updated": "2026-11-26",
+ "resources": [
+  {
+   "name": "Claude doc version",
+   "url": "https://claude.ai/artifact/6GmncC4PDJ8FPVnDmzRp2i",
+   "section": null,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs Eleven v4",
+   "url": "https://elevenlabs.io/blog/eleven-v4",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "TestingCatalog",
+   "url": "https://testingcatalog.com/elevenlabs-launches-eleven-v4-and-v4-turbo-voice-models",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "The Decoder",
+   "url": "https://the-decoder.com/elevenlabs-new-v4-speech-model-makes-ai-voices-more-expressive-and-consistent/",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "v3 guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v3",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Gemini 3.8 Flash TTS",
+   "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google Cloud",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "OpenAI gpt-4o-mini-tts",
+   "url": "https://developers.openai.com/api/docs/guides/text-to-speech",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "model page",
+   "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs v4 guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v4",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io/docs/creative-platform/voices/voice-cloning",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Instant Voice Cloning",
+   "url": "https://elevenlabs.io/docs/creative-platform/voices/voice-cloning/instant-voice-cloning",
+   "section": 1,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "v4 guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v4",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs normalisation",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/normalization",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "best practices",
+   "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "SSML support",
+   "url": "https://elevenlabs.io/blog/ssml-tags-explained",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Gemini TTS prompting guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "OpenAI TTS guide",
+   "url": "https://developers.openai.com/api/docs/guides/text-to-speech",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "v3 guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v3",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "v4 guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v4",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io/es/blog/7-tips-for-creating-a-professional-grade-voice-clone-in-elevenlabs",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Studio",
+   "url": "https://elevenlabs.io/docs/projects",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Generation History",
+   "url": "https://elevenlabs.io/docs/help-center/product/content-production/studio/what-is-generation-history-in-studio",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "help",
+   "url": "https://help.elevenlabs.io/hc/en-us/articles/30065456369169-Can-I-regenerate-individual-words-in-Studio",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io/blog/eleven-v4",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Studio API",
+   "url": "https://elevenlabs.io/docs/api-reference/projects-api-information",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow Help",
+   "url": "https://support.google.com/flow/answer/16353334",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google AI guide",
+   "url": "https://dev.to/googleai/nano-banana-pro-prompting-guide-strategies-1h9n",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Nano Banana guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow models",
+   "url": "https://support.google.com/flow/answer/16352836",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Android Authority",
+   "url": "https://www.androidauthority.com/google-gemini-omni-1-2-flash-announced-3732209/",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google blog",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Pickaxe forum",
+   "url": "https://community.pickaxe.co/t/nano-banana-image-editing-model/7037?page=2",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Adobe community",
+   "url": "https://community.adobe.com/questions-404/firefly-gemini-issue-nano-banana-pro-rotates-images-treats-walls-as-ceilings-ignores-prompts-changes-perspective-and-adds-fake-content-same-workflow-worked-before-gpt-image-2-works-better-1627087",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google AI forum",
+   "url": "https://discuss.ai.google.dev/t/gemini-2-5-flash-nano-banana-auto-aspect-ratio-issue-output-image-has-different-aspect-ratio/108225",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Adobe community",
+   "url": "https://community.adobe.com/questions-700/gemini-2-5-image-distored-670309",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow Help",
+   "url": "https://support.google.com/labs/answer/16935308",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Search Engine Journal",
+   "url": "https://searchenginejournal.com/google-lets-you-turn-off-visible-watermarks-in-gemini/586145",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "PCWorld",
+   "url": "https://www.pcworld.com/article/3213409",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google AI forum",
+   "url": "https://discuss.ai.google.dev/t/regression-forced-visible-star-watermark-breaks-gemini-nano-banana-pro-image-to-image-and-flow-frame-to-video-workflows/114193",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow FAQ",
+   "url": "https://labs.google/fx/en-gb/tools/flow/faq",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google AI forum",
+   "url": "https://discuss.ai.google.dev/t/nano-banan-pro-ignoring-prompt-and-reference-images/112781",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Nano Banana guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana",
+   "section": 5,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow Help",
+   "url": "https://support.google.com/labs/answer/16935308",
+   "section": 5,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow Help",
+   "url": "https://support.google.com/flow/answer/16353334",
+   "section": 5,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Cloudinary",
+   "url": "https://cloudinary.com/guides/image-generation/how-to-make-ai-images-look-real",
+   "section": 6,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Skylum",
+   "url": "https://blog.skylum.com/how-to-edit-an-ai-generated-photo-for-the-most-natural-result/",
+   "section": 6,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Nano Banana guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana",
+   "section": 6,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "invideo",
+   "url": "https://invideo.io/faq/how-do-you-make-ai-generated-video-look-more-realistic/",
+   "section": 6,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "From the Heart Productions",
+   "url": "https://fromtheheartproductions.com/mastering-narrative-keys-to-crafting-compelling-documentaries/",
+   "section": 7,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Open Book Publishers",
+   "url": "https://books.openbookpublishers.com/10.11647/obp.0255/ch20.xhtml",
+   "section": 7,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Doc Film Academy",
+   "url": "https://www.docfilmacademy.com/blog/how-to-write-a-documentary-script",
+   "section": 7,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Doc Film Academy",
+   "url": "https://www.docfilmacademy.com/blog/master-the-art-of-documentary-storytelling-in-three-acts",
+   "section": 7,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "MasterClass",
+   "url": "https://masterclass.com/articles/ken-burns-shares-tips-for-writing-a-documentary-script",
+   "section": 7,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "MasterClass",
+   "url": "https://masterclass.com/articles/ken-burns-shares-tips-for-writing-a-documentary-script",
+   "section": 8,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Doc Film Academy",
+   "url": "https://www.docfilmacademy.com/blog/how-to-write-a-documentary-script",
+   "section": 8,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Descript",
+   "url": "https://www.descript.com/blog/article/what-is-sound-design-the-essential-elements-of-sound-design",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Epidemic Sound",
+   "url": "https://www.epidemicsound.com/filmmaking/documentary-sound-effects/",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Epidemic Sound",
+   "url": "https://www.epidemicsound.com/sound-effects/playlists/documentary/",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Pixflow",
+   "url": "https://pixflow.net/blog/ambient-sound-design-layering/",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Overseeros",
+   "url": "https://www.overseeros.com/blog/youtube-sound-design",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs Studio",
+   "url": "https://elevenlabs.io/docs/projects",
+   "section": 9,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Overseeros",
+   "url": "https://www.overseeros.com/blog/background-music-volume-under-voiceover",
+   "section": 10,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Pixflow",
+   "url": "https://pixflow.net/blog/audio-mixing-premiere-pro/",
+   "section": 10,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Vidpros",
+   "url": "https://vidpros.com/fix-background-music-too-loud-video/",
+   "section": 10,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Storyblocks",
+   "url": "https://www.storyblocks.com/resources/tutorials/how-to-balance-audio-premiere-pro",
+   "section": 10,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "iZotope",
+   "url": "https://www.izotope.com/en/learn/mixing-audio-for-video-part-4-mixing-techniques",
+   "section": 10,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Pixflow",
+   "url": "https://pixflow.net/blog/audio-mixing-premiere-pro/",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Adorama",
+   "url": "https://www.adorama.com/alc/mastering-audio-levels/",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "HackerNoon",
+   "url": "https://hackernoon.com/how-to-master-ai-generated-film-audio-for-youtube",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Shotcut forum",
+   "url": "https://forum.shotcut.org/t/getting-the-right-audio-level/16323",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Shotcut forum",
+   "url": "https://forum.shotcut.org/t/video-volume/24529/4",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Netflix",
+   "url": "https://backlothelp.netflix.com/hc/en-us/articles/360001794307-Netflix-Sound-Mix-Specifications-Best-Practices-v1-5",
+   "section": 11,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs text to speech",
+   "url": "https://elevenlabs.io/docs/eleven-api/guides/how-to/text-to-speech/request-stitching",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "cookbook",
+   "url": "https://elevenlabs.io/docs/cookbooks/text-to-speech/request-stitching",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Gemini TTS",
+   "url": "https://ai.google.dev/gemini-api/docs/speech-generation",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "model page",
+   "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "OpenAI speech",
+   "url": "https://developers.openai.com/api/docs/guides/text-to-speech",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Veo 3.1 in the Gemini API",
+   "url": "https://ai.google.dev/gemini-api/docs/veo",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Vertex AI",
+   "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-1-generate-preview",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google AI forum",
+   "url": "https://discuss.ai.google.dev/t/the-documentation-for-veo-3-1-using-table-is-incostient-with-what-is-shown-on-the-generative-ai-page/145253",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google Cloud",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Claude automation directory",
+   "url": "https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "YouTube growth directory",
+   "url": "https://claude.ai/artifact/2Lq8sVePp9rNjqE8Eouva6",
+   "section": 12,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs best practices",
+   "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Eleven v4 prompting guide",
+   "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v4",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Gemini speech generation",
+   "url": "https://ai.google.dev/gemini-api/docs/speech-generation",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "TTS prompting guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "OpenAI text to speech",
+   "url": "https://developers.openai.com/api/docs/guides/text-to-speech",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow Help Center",
+   "url": "https://support.google.com/flow/answer/16353334",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow models and features",
+   "url": "https://support.google.com/flow/answer/16352836",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "The ultimate Nano Banana prompting guide",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Veo in the Gemini API",
+   "url": "https://ai.google.dev/gemini-api/docs/veo",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Netflix sound mix specifications",
+   "url": "https://backlothelp.netflix.com/hc/en-us/articles/360001794307-Netflix-Sound-Mix-Specifications-Best-Practices-v1-5",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "MasterClass summary",
+   "url": "https://masterclass.com/articles/ken-burns-shares-tips-for-writing-a-documentary-script",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Doc Film Academy",
+   "url": "https://www.docfilmacademy.com/blog/how-to-write-a-documentary-script",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "The Three-Act Structure",
+   "url": "https://books.openbookpublishers.com/10.11647/obp.0255/ch20.xhtml",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "International Documentary Association",
+   "url": "https://documentary.org",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "YouTube growth",
+   "url": "https://claude.ai/artifact/2Lq8sVePp9rNjqE8Eouva6",
+   "section": 13,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Claude automation",
+   "url": "https://claude.ai/artifact/H6idk1MoA39ynYkapdgwUz",
+   "section": 13,
+   "verified": "2026-11-26"
+  }
+ ],
+ "note": "403s from masterclass.com, help.elevenlabs.io, pixflow.net and storyblocks.com are bot blocks; each page was confirmed by WebFetch on 2026-11-26."
+}
