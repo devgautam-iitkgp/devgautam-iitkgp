@@ -1,6 +1,7 @@
 {
  "title": "Video Craft Directory",
  "updated": "2026-11-26",
+ "note": "403s from masterclass.com, help.elevenlabs.io, pixflow.net and storyblocks.com are bot blocks; each page was confirmed by WebFetch on 2026-11-26.",
  "resources": [
   {
    "name": "Claude doc version",
@@ -111,8 +112,50 @@
    "verified": "2026-11-26"
   },
   {
+   "name": "Google AI Studio docs",
+   "url": "https://aistudio.google.com/docs/speech-generation",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "migration guide",
+   "url": "https://aistudio.google.com/docs/models/gemini-3.8-flash-tts",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
    "name": "v3 guide",
    "url": "https://elevenlabs.io/docs/best-practices/prompting/eleven-v3",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io/docs/product-guides/playground/text-to-speech",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "API reference",
+   "url": "https://elevenlabs.io/docs/api-reference/voices/settings/get",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Text to Speech guide",
+   "url": "https://elevenlabs.io/docs/product/guides/speech-synthesis",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Studio docs",
+   "url": "https://elevenlabs.io/docs/projects",
+   "section": 2,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Voice Changer docs",
+   "url": "https://elevenlabs.io/docs/eleven-creative/playground/voice-changer",
    "section": 2,
    "verified": "2026-11-26"
   },
@@ -159,8 +202,20 @@
    "verified": "2026-11-26"
   },
   {
-   "name": "Flow Help",
-   "url": "https://support.google.com/flow/answer/16353334",
+   "name": "ElevenLabs",
+   "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google",
+   "url": "https://aistudio.google.com/docs/models/gemini-3.8-flash-tts",
+   "section": 3,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow models",
+   "url": "https://support.google.com/flow/answer/16352836",
    "section": 4,
    "verified": "2026-11-26"
   },
@@ -177,26 +232,26 @@
    "verified": "2026-11-26"
   },
   {
-   "name": "Flow models",
-   "url": "https://support.google.com/flow/answer/16352836",
-   "section": 4,
-   "verified": "2026-11-26"
-  },
-  {
-   "name": "TechCrunch",
-   "url": "https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/",
-   "section": 4,
-   "verified": "2026-11-26"
-  },
-  {
-   "name": "Android Authority",
-   "url": "https://www.androidauthority.com/google-gemini-omni-1-2-flash-announced-3732209/",
+   "name": "Flow Help",
+   "url": "https://support.google.com/flow/answer/16894016",
    "section": 4,
    "verified": "2026-11-26"
   },
   {
    "name": "Google blog",
    "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Flow credits",
+   "url": "https://support.google.com/flow/answer/16526234",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "WaveSpeed",
+   "url": "https://wavespeed.ai/blog/cost-and-billing/google-flow-pricing-2026/",
    "section": 4,
    "verified": "2026-11-26"
   },
@@ -209,6 +264,18 @@
   {
    "name": "Adobe community",
    "url": "https://community.adobe.com/questions-404/firefly-gemini-issue-nano-banana-pro-rotates-images-treats-walls-as-ceilings-ignores-prompts-changes-perspective-and-adds-fake-content-same-workflow-worked-before-gpt-image-2-works-better-1627087",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Ultralytics",
+   "url": "https://www.ultralytics.com/blog/exif-orientation",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Google forum",
+   "url": "https://discuss.google.dev/t/text-detection-of-google-vision-api-send-back-rotated-boundingpolies-from-a-phone-camera/181082",
    "section": 4,
    "verified": "2026-11-26"
   },
@@ -257,6 +324,24 @@
   {
    "name": "Google AI forum",
    "url": "https://discuss.ai.google.dev/t/nano-banan-pro-ignoring-prompt-and-reference-images/112781",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Morphic",
+   "url": "https://morphic.com/resources/how-to/gemini-omni-flash-1-2-guide",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "Veo prompt guide",
+   "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+   "section": 4,
+   "verified": "2026-11-26"
+  },
+  {
+   "name": "fal",
+   "url": "https://fal.ai/learn/tools/how-to-edit-videos-with-gemini-omni-flash",
    "section": 4,
    "verified": "2026-11-26"
   },
@@ -608,6 +693,5 @@
    "section": 13,
    "verified": "2026-11-26"
   }
- ],
- "note": "403s from masterclass.com, help.elevenlabs.io, pixflow.net and storyblocks.com are bot blocks; each page was confirmed by WebFetch on 2026-11-26."
+ ]
 }

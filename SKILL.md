@@ -5,7 +5,7 @@ description: Production craft for narrated, documentary-style videos - AI narrat
 
 # Video craft
 
-1. Read `AGENT_INDEX.md` in this folder first (about 2.9k tokens). Start at DECIDE; each line points to a section like [§3].
+1. Read `AGENT_INDEX.md` in this folder first (about 3.8k tokens). Start at DECIDE; each line points to a section like [§3].
 2. Open `DIRECTORY.md` at that section only when you need the full explanation, tables or source links.
 3. TTS and video models change monthly. Before relying on a model name, limit, tag or price, open the source linked in that section.
 4. Never invent facts for a script, never present AI reconstructions of real people or events as authentic, and never publish without the owner's approval (§6, §12).

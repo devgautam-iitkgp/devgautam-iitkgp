@@ -14,12 +14,15 @@ The script comes first because everything else is generated from it: the narrati
 
 | Problem | Go to |
 | --- | --- |
-| AI narration sounds flat, robotic or theatrical | 1. Choosing the engine and voice; 2. Controlling delivery |
+| AI narration sounds flat, robotic or theatrical | 1. Choosing the engine and voice; 2. Controlling delivery (voice settings) |
 | Wrong emphasis, rushed lines, no pauses | 2. Controlling delivery |
+| A key line still won't come out right | 2. Direct the delivery with your own voice (Actor Mode, Voice Changer) |
 | Names and numbers mispronounced | 2. Controlling delivery (pronunciation) |
-| Takes vary; can't decide which is best; joins audible | 3. Picking and fixing takes |
-| Stills come out rotated, reframed or stamped with a sparkle | 4. Flow, Veo and Nano Banana quirks |
-| Characters and style drift between shots or projects | 5. Keeping one style |
+| Takes vary; can't decide which is best; joins audible | 3. Picking and fixing takes (problem-and-fix table, blind listening test) |
+| Which video model to use now; models retiring | 4. Flow, Veo and Nano Banana (model table) |
+| Stills come out rotated, reframed or stamped with a sparkle | 4. Quirks table |
+| Veo or Omni ignores the prompt; edits change too much | 4. Prompting Veo and Omni |
+| Characters and style drift between shots or projects | 4. Continuity; 5. Keeping one style |
 | Visuals look obviously AI | 6. Making AI art not look AI |
 | Story feels like a list of facts | 7. Documentary and story structure |
 | Narration is hard to listen to | 8. Writing the narration script |
@@ -68,12 +71,12 @@ Think like a voice director: decide what each line is for before choosing a tag.
 
 **Engine-specific controls**
 
-| Need | ElevenLabs v4 / v3 | ElevenLabs v2 models | Gemini TTS | OpenAI gpt-4o-mini-tts |
+| Need | ElevenLabs v4 / v3 | ElevenLabs v2 models | Gemini 3.8 TTS | OpenAI gpt-4o-mini-tts |
 | --- | --- | --- | --- | --- |
-| Pause | Ellipses, full stops, line breaks; SSML breaks are not supported | `<break time="1.5s" />`, up to 3 s; too many cause instability | `[short pause]`, `[long pause]` | Punctuation; ask for pauses in `instructions` |
-| Pace | Speed setting 0.7 to 1.2; punctuation | Speed setting | `[slow]`, `[fast]`; style instruction | "Speak slowly and deliberately" in `instructions` |
-| Emotion | Tags such as `[whispers]`, `[sighs]`, `[curious]`, `[excited]` | Limited; comes from the voice | 200+ tags such as `[cautious]`, `[awe]`, `[relief]`, `[seriousness]` | Instructions only |
-| Emphasis | Capitals; ellipsis before the word | Rephrase; italics don't help | No emphasis tag; `[slow]` before the key words | Instructions |
+| Pause | Ellipses, full stops, line breaks; SSML breaks are not supported | `<break time="1.5s" />`, up to 3 s; keep to 2 or 3 per paragraph | Inline `<short pause>`, `<long pause>`; punctuation | Punctuation; ask for pauses in `instructions` |
+| Pace | Speed setting 0.7 to 1.2; punctuation | Speed setting | "speaking slowly" in the turn's style field | "Speak slowly and deliberately" in `instructions` |
+| Emotion | Tags such as `[whispers]`, `[sighs]`, `[curious]`, `[excited]` | Comes from the voice and stability setting | Turn-level style ("warm and unhurried"); inline `<sigh>`, `<laugh>`, `<breath>` for moments | Instructions only |
+| Emphasis | CAPITALS; ellipsis before the word | Rephrase; italics don't help | CAPITALS on the key word, with punctuation | Instructions |
 | Pronunciation | IPA in slashes; dictionaries | Phoneme tags (CMU Arpabet) on Flash v2 only | Spell it phonetically | Spell it phonetically |
 
 Sources: [ElevenLabs v4 guide](https://elevenlabs.io/docs/best-practices/prompting/eleven-v4), [SSML support](https://elevenlabs.io/blog/ssml-tags-explained), [Gemini TTS prompting guide](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud), [OpenAI TTS guide](https://developers.openai.com/api/docs/guides/text-to-speech).
@@ -81,16 +84,39 @@ Sources: [ElevenLabs v4 guide](https://elevenlabs.io/docs/best-practices/prompti
 **Rules for tags**
 
 - Tags are direction, not decoration. A documentary narration usually needs only a few per minute: one at a mood change, one before a reveal, a pause before the key fact.
-- On Gemini, put each tag exactly where the change should happen, never two tags side by side, and write tags in English even when the narration is in another language ([Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud)).
+- **Gemini 3.8 changed the syntax.** It reads the text strictly as a transcript, so anything written as stage directions can be spoken aloud. Put a turn's delivery (emotion, pace, volume) in the `speech_metadata.style` field; put momentary events inline in angle brackets such as `<short pause>`, `<laugh>`, `<breath>`; and split the script into separate turns where the delivery changes ([Google AI Studio docs](https://aistudio.google.com/docs/speech-generation)). The square-bracket tags in Google's April 2026 guide were for the earlier 3.1 preview.
+- **On Gemini, keep style short.** Google names long "Audio Profile" or "Director's Notes" blocks as the most common cause of voice drift. Design the narrator once with Voice design, reuse its voice ID, test with an empty style first, and leave fixed traits (age, accent) out of the style ([Google AI Studio docs](https://aistudio.google.com/docs/speech-generation), [migration guide](https://aistudio.google.com/docs/models/gemini-3.8-flash-tts)).
 - On ElevenLabs, describe a voice quality explicitly (`[low, gravelly voice]`) so the model doesn't read the tag as a sound effect, and keep tags consistent with the voice's character ([v4 guide](https://elevenlabs.io/docs/best-practices/prompting/eleven-v4)).
 - On v3, lower stability makes tags more responsive but takes less consistent; higher stability flattens them ([v3 guide](https://elevenlabs.io/docs/best-practices/prompting/eleven-v3)).
-- For long scripts, Google suggests having a cheaper model add the tags programmatically, then reviewing them, instead of tagging by hand.
+- For long scripts, have a cheaper model add tags programmatically, then review them, instead of tagging by hand ([Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud)).
 
 **A worked example (documentary register)**
 
 Plain: "By 1912 the town had 4,000 people. Ten years later it had none."
 
-Directed: "By nineteen twelve, the town had four thousand people... Ten years later, it had NONE." Add a `[long pause]` (Gemini) or a paragraph break (ElevenLabs) after it, so the fact can land before the next line.
+Directed: "By nineteen twelve, the town had four thousand people... Ten years later, it had NONE." Add `<long pause>` (Gemini) or a paragraph break (ElevenLabs) after it, so the fact can land before the next line.
+
+### Voice settings (ElevenLabs)
+
+| Setting | What it does | Starting point for narration |
+| --- | --- | --- |
+| Stability | Lower is livelier and more varied between takes; higher is steadier, bordering on monotone at very high values | Around 50; raise it for serious explainer reads, lower it for drama and then generate several takes ([ElevenLabs](https://elevenlabs.io/docs/product-guides/playground/text-to-speech)) |
+| Similarity (Clarity + Similarity) | How closely output sticks to the original voice; set high on a poor-quality clone and it also copies the noise | Around 75; not available on Eleven v3 (same source) |
+| Style exaggeration | Amplifies the original speaker's style; adds latency above 0 | 0 to start ([API reference](https://elevenlabs.io/docs/api-reference/voices/settings/get)) |
+| Speed | 0.7 to 1.2; extremes can lower quality | 1.0, then adjust per voice |
+| Clone Strength | v4 with a Professional Voice Clone only | 0% for most voices; raise for distinctive accents ([ElevenLabs](https://elevenlabs.io/docs/product-guides/playground/text-to-speech)) |
+
+ElevenLabs' own summary: the most common setting is stability around 50, similarity around 75 and style at 0, with small changes from there ([Text to Speech guide](https://elevenlabs.io/docs/product/guides/speech-synthesis)). Keep the same settings for a whole video; changing them between chapters is a common cause of audible jumps.
+
+### Direct the delivery with your own voice
+
+When tags and punctuation can't get a line right, perform it yourself and let the model copy the performance. This is the most direct control available over emphasis and timing.
+
+- **Actor Mode (ElevenLabs Studio):** select a phrase or paragraph, record or upload yourself reading it the way you want, and Studio generates that text in the project's voice following your delivery ([Studio docs](https://elevenlabs.io/docs/projects)). Use it for the hook, reveals and any line whose stress keeps landing wrong.
+- **Voice Changer (speech-to-speech):** converts a whole recording into another voice while keeping its tone, cadence and emotion, and can fix pronunciation in a TTS take. Inputs must be under 5 minutes and 50 MB, so split long narration into sections; it costs 1,000 characters' worth of credits per minute ([Voice Changer docs](https://elevenlabs.io/docs/eleven-creative/playground/voice-changer)).
+- **How to record the guide read:** be more expressive than you think you need; set mic gain so it neither clips nor sits too quiet; turn on Remove Background Noise; and remember your accent carries over, so a British target voice performed in an American accent comes out American (same source).
+- **A workflow that suits faceless channels:** generate the whole script with TTS; mark the 10–20 lines that matter most; re-do those with Actor Mode or a Voice Changer pass of your own read; splice them in (section 3).
+- Only convert into voices you have the right to use, and disclose a realistic synthetic voice where YouTube's rules require it.
 
 ## 3. Picking and fixing takes
 
@@ -125,29 +151,86 @@ Listen once at normal speed without the script (as a viewer), then once reading 
 
 **Automated QA before the human pass:** transcribe the final narration with a speech-to-text model and diff it against the script. Any mismatch (skipped line, repeated phrase, misread number) is flagged for a regenerate before you listen for performance.
 
+### Common narration problems and their fixes
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Speeds up, adds noises or artefacts mid-paragraph | Too many break tags in one generation ([ElevenLabs](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices)) | 2 or 3 breaks per paragraph at most ([Studio docs](https://elevenlabs.io/docs/projects)); use full stops and paragraph breaks instead |
+| The voice says your stage direction ("she said excitedly", "whispering") | Emotional guides written in the text are spoken aloud; Gemini 3.8 treats all text as transcript | Move direction into tags or the style field; cut spoken directions in the edit ([ElevenLabs](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices), [Google](https://aistudio.google.com/docs/models/gemini-3.8-flash-tts)) |
+| A tag comes out as a sound effect | Ambiguous tag | Describe the voice quality instead (`[low, gravelly voice]`) and test tags on your voice first |
+| Voice drifts between chapters | Different settings, different days, isolated chunks, long style prompts | Same voice ID and settings throughout; request stitching or context stitching; on Gemini, short or empty style |
+| Pacing too fast or too slow everywhere | Cloned voices inherit the pace of their training audio | Re-record clone samples as longer continuous reads at the pace you want ([ElevenLabs](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices)); adjust speed within 0.9–1.1 |
+| Same word pronounced differently each time | IPA and dictionaries are not 100% consistent | Test key words on your voice; keep the take that's right; respell phonetically |
+| Monotone "reading" sound | Stability too high, script written for the eye | Lower stability a little; rewrite long sentences (section 8); Actor Mode for key lines |
+| Theatrical "trailer voice" | Stability too low, style or tags overused | Raise stability, cut tags, describe a calmer read |
+| Noise or hiss copied from the clone | Poor source audio with high similarity | Re-record samples cleanly, or lower similarity |
+
+### A blind listening test for choosing a voice or engine
+
+1. Pick one 45–60 second passage from a real script, with a name, a number and an emotional turn.
+2. Generate it with each candidate voice or engine at its recommended settings, 2 takes each.
+3. Loudness-match the files (same LUFS) and rename them so you don't know which is which.
+4. Listen on a phone speaker and on earbuds; score each for clarity, naturalness and fit with your channel's tone from 1 to 5.
+5. Ask two people who don't know the options to pick their favourite; their choice beats your familiarity.
+6. Keep the winner's settings in a text file and never change them mid-series.
+
 ## 4. Flow, Veo and Nano Banana: how they fit together, and their quirks
 
 **The stack (November 2026).** Google Flow is the workspace; inside it, Nano Banana makes stills and Veo or Gemini Omni turn them into clips.
 
-| Tool | What it's for | Key facts |
+| Tool | What it's for | Key facts (Flow, late November 2026) |
 | --- | --- | --- |
-| Nano Banana Pro / Nano Banana 2 | Stills, keyframes, character sheets, edits | Nano Banana Pro is Flow's default model ([Flow Help](https://support.google.com/flow/answer/16353334)). Up to 14 reference images per prompt, 6 of them at high fidelity ([Google AI guide](https://dev.to/googleai/nano-banana-pro-prompting-guide-strategies-1h9n)). 1K, 2K or 4K; ratios from 1:1 to 21:9 ([Nano Banana guide](https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana)) |
-| Veo 3.1 (Lite, Fast, full) | Clips with sound from text, first/last frames or ingredients | 4, 6 or 8 s clips; Ingredients to Video is 8 s only; Fast can't extend or edit video to video ([Flow models](https://support.google.com/flow/answer/16352836)) |
-| Gemini Omni Flash | Video from mixed text, image, audio and video inputs, and conversational editing | Launched May 19, 2026, with 10 s clips ([TechCrunch](https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/)); Omni 1.2 Flash raised that to 15 s ([Android Authority](https://www.androidauthority.com/google-gemini-omni-1-2-flash-announced-3732209/)) |
-| Flow | Projects, asset grid, collections, Characters, Scenebuilder, Flow Agent, custom Flow Tools | `@` finds assets in the project by name ([Flow Help](https://support.google.com/flow/answer/16353334)); new Flow Tools in November 2026 include Character Arc for keeping a character consistent across ages ([Google blog](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/)) |
+| Gemini Omni Flash 1.2 | Google's recommended video model in Flow: text, frames, ingredients and video-to-video, plus conversational edits | 3–10 s free, 3–15 s on paid plans; Omni Extend adds 3–10 s (paid, web only); 360p costs a third of 720p and can be upscaled to 1080p, or 4K on Ultra ([Flow models](https://support.google.com/flow/answer/16352836)) |
+| Veo 3.1 Lite | Low-cost 720p Veo | 4, 6 or 8 s; ingredients 8 s only; no extend or video-to-video (same source) |
+| Veo 3.1 Fast and Quality, Omni Flash 1.1 | Older models | **Retire from Flow on December 5, 2026.** Veo Extend was already retired on November 5, 2026 (same source). Move series work to Omni 1.2 |
+| Nano Banana Pro / 2.1 / 2 Lite | Stills, keyframes, character sheets, edits | Pro is the default on Ultra, 2 Lite the free default, 2.1 the standard fast model (same source). Up to 14 reference images, 6 at high fidelity ([Google AI guide](https://dev.to/googleai/nano-banana-pro-prompting-guide-strategies-1h9n)); 1K–4K; ratios 1:1 to 21:9 ([Nano Banana guide](https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana)) |
+| Flow | Projects, asset grid, collections, Characters, Scenebuilder, Flow Agent, custom Flow Tools | `@` inserts a saved character or asset ([Flow Help](https://support.google.com/flow/answer/16894016)); November 2026 Flow Tools include Character Arc for one character across ages ([Google blog](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/)) |
+
+**Credits.** Google AI Pro includes 1,000 Flow credits a month, Ultra 10,000 or 25,000 depending on tier, and everyone gets 50 a day ([Flow credits](https://support.google.com/flow/answer/16526234)). A third-party price summary puts Omni 1.2 at about 1 credit per second at 360p and 3 per second at 720p ([WaveSpeed](https://wavespeed.ai/blog/cost-and-billing/google-flow-pricing-2026/)); check the cost shown in Flow's prompt box before a big batch. Draft at 360p, upscale only the takes you keep.
 
 **Known quirks and fixes**
 
 | Quirk | What's going on | Fix |
 | --- | --- | --- |
-| Stills come back rotated or sideways | Users report Nano Banana returning portrait phone photos sideways ([Pickaxe forum](https://community.pickaxe.co/t/nano-banana-image-editing-model/7037?page=2)) and rotating or reframing images ([Adobe community](https://community.adobe.com/questions-404/firefly-gemini-issue-nano-banana-pro-rotates-images-treats-walls-as-ceilings-ignores-prompts-changes-perspective-and-adds-fake-content-same-workflow-worked-before-gpt-image-2-works-better-1627087)). A likely cause with phone photos is that their rotation is stored as metadata (EXIF) rather than in the pixels | Before uploading, rotate the pixels and save a fresh copy (any editor's "export" bakes the rotation in). State the orientation and aspect ratio in the prompt ("upright, 16:9 landscape"). Check every still before turning it into a frame for video |
-| Output size or framing drifts from the input | In auto mode the model tends to match the input size or fall back to 1:1, and edits can shift or stretch slightly ([Google AI forum](https://discuss.ai.google.dev/t/gemini-2-5-flash-nano-banana-auto-aspect-ratio-issue-output-image-has-different-aspect-ratio/108225)) | Set the aspect ratio explicitly. For an edit, align the result back over the original in an editor (Photoshop: Auto-Align Layers) and mask in only the changed area ([Adobe community](https://community.adobe.com/questions-700/gemini-2-5-image-distored-670309)) |
-| References don't carry across projects | Assets, collections and Characters live inside a project; Google's Help pages don't describe moving them between projects ([Flow Help](https://support.google.com/labs/answer/16935308)) | Keep a master reference kit outside Flow (section 5) and upload it to each new project, or keep one long-running project for a series |
-| Sparkle mark in the corner | Since August 14, 2026, a Media Watermark setting in Gemini and Flow turns off the visible mark on Nano Banana, Omni and Lyria output. It isn't offered in countries whose laws require the mark, and the invisible SynthID watermark and C2PA metadata always stay ([Search Engine Journal](https://searchenginejournal.com/google-lets-you-turn-off-visible-watermarks-in-gemini/586145), [PCWorld](https://www.pcworld.com/article/3213409)). In AI Studio, linking a paid API key removes it ([Google AI forum](https://discuss.ai.google.dev/t/regression-forced-visible-star-watermark-breaks-gemini-nano-banana-pro-image-to-image-and-flow-frame-to-video-workflows/114193)) | Turn the setting off before generating, especially for stills you'll use as video frames, so the mark isn't animated into the clip. Don't try to strip SynthID, and still disclose realistic AI on YouTube |
-| Ingredients blend wrongly | Conflicting references confuse the model ([Flow FAQ](https://labs.google/fx/en-gb/tools/flow/faq)) | Name each ingredient's role in the prompt; keep location and style references free of extra people; keep all ingredient images in one consistent look |
-| Voice references error out | A voice reference only works on generations that use ingredients, one per generation ([Flow Help](https://support.google.com/flow/answer/16353334)) | Switch to Ingredients mode, or add narration in the edit instead |
-| Same prompt, wildly different result | Generations vary; one of five outputs can ignore the references ([Google AI forum](https://discuss.ai.google.dev/t/nano-banan-pro-ignoring-prompt-and-reference-images/112781)) | Generate 2–4 outputs per shot and pick; keep the winning prompt text |
-| Scenebuilder can't post to YouTube | Sequences must be downloaded as one file and uploaded in Studio ([Flow Help](https://support.google.com/labs/answer/16935308)) | Export the sequence; better still, export clips and cut in a real editor |
+| Stills come back rotated or sideways | Users report Nano Banana returning portrait phone photos sideways ([Pickaxe forum](https://community.pickaxe.co/t/nano-banana-image-editing-model/7037?page=2)) and rotating or reframing images ([Adobe community](https://community.adobe.com/questions-404/firefly-gemini-issue-nano-banana-pro-rotates-images-treats-walls-as-ceilings-ignores-prompts-changes-perspective-and-adds-fake-content-same-workflow-worked-before-gpt-image-2-works-better-1627087)). The likely cause with phone photos is the EXIF orientation tag: the pixels are stored sideways with a "display rotated" instruction that some pipelines ignore ([Ultralytics](https://www.ultralytics.com/blog/exif-orientation)). Google's own advice for its Vision API is to remove the EXIF orientation or rotate the image before sending ([Google forum](https://discuss.google.dev/t/text-detection-of-google-vision-api-send-back-rotated-boundingpolies-from-a-phone-camera/181082)) | Rotate the pixels and re-export a fresh copy (any editor's export bakes the rotation in; then the EXIF tag no longer matters). State orientation and ratio in the prompt ("upright, 16:9 landscape"). Check every still before using it as a video frame. Not officially confirmed by Google for Nano Banana |
+| Output size or framing drifts from the input | In auto mode the model tends to match the input size or fall back to 1:1, and edits can shift or stretch slightly ([Google AI forum](https://discuss.ai.google.dev/t/gemini-2-5-flash-nano-banana-auto-aspect-ratio-issue-output-image-has-different-aspect-ratio/108225)) | Set the aspect ratio explicitly. For an edit, align the result back over the original (Photoshop: Auto-Align Layers) and mask in only the changed area ([Adobe community](https://community.adobe.com/questions-700/gemini-2-5-image-distored-670309)) |
+| References don't carry across projects | Characters now bundle face, clothing and voice and are reused with `@` ([Flow Help](https://support.google.com/labs/answer/16935308)), but they're created and managed inside a project, and Google's Help pages don't describe moving them between projects | Keep a master reference kit outside Flow (section 5) and rebuild the Character in each new project from the same 1–2 images and voice settings, or keep one long-running project per series |
+| Sparkle mark in the corner | Since August 14, 2026, a Media Watermark setting in Gemini and Flow turns off the visible mark on Nano Banana, Omni and Lyria output, except in countries whose laws require it; SynthID and C2PA metadata always stay ([Search Engine Journal](https://searchenginejournal.com/google-lets-you-turn-off-visible-watermarks-in-gemini/586145), [PCWorld](https://www.pcworld.com/article/3213409)). In AI Studio, a paid API key removes it ([Google AI forum](https://discuss.ai.google.dev/t/regression-forced-visible-star-watermark-breaks-gemini-nano-banana-pro-image-to-image-and-flow-frame-to-video-workflows/114193)) | Turn the setting off before generating stills you'll animate, so the mark isn't baked into the clip. Don't try to strip SynthID; still disclose realistic AI on YouTube |
+| Ingredients blend wrongly | Conflicting references ([Flow FAQ](https://labs.google/fx/en-gb/tools/flow/faq)) | Give each reference one job and say it in words; keep location and style references free of extra people; keep one look across all ingredients |
+| Voice references error out | A voice reference only works on ingredient generations ([Flow Help](https://support.google.com/flow/answer/16894016)) | Switch to Ingredients, or add narration in the edit |
+| Same prompt, very different result | Generations vary; one in five can ignore the references ([Google AI forum](https://discuss.ai.google.dev/t/nano-banan-pro-ignoring-prompt-and-reference-images/112781)) | Generate 2–4 outputs per shot; save the winning prompt |
+| An Omni edit changes things you didn't ask for | Edits re-render the whole clip ([Morphic](https://morphic.com/resources/how-to/gemini-omni-flash-1-2-guide)) | One change per turn, ending with "Keep everything else the same" (next subsection) |
+| Old reference tags stop working | Omni 1.2 deprecated the angle-bracket reference tags; references are now described in plain words (same source) | "Use the first image as the opening frame"; "match the jacket in the second photo" |
+| Feature missing in Europe or the UK | Editing or extending uploaded footage with Omni is unavailable in the EEA, Switzerland and the UK (same source) | Generate from stills and text instead |
+| Scenebuilder can't post to YouTube | Sequences must be downloaded as one file and uploaded in Studio ([Flow Help](https://support.google.com/labs/answer/16935308)) | Export clips and cut in a real editor |
+
+### Prompting Veo and Omni
+
+**Veo 3.1 (Google's prompt guide).** Build prompts from subject, action, scene, visual style, temporal elements (slow motion, time-lapse) and cinematic terms; you don't need every part each time ([Veo prompt guide](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide)).
+
+- **Camera vocabulary that Veo understands:** angles (eye-level, low-angle for power, high-angle for vulnerability, bird's-eye, Dutch angle, over-the-shoulder, POV); movement (static, pan, tilt, dolly, truck, pedestal, zoom, crane, aerial, handheld, whip pan, arc); lens (wide-angle, telephoto, shallow depth of field, rack focus). Some advanced terms aren't officially supported (same source).
+- **Sound:** ask for audio explicitly, in separate sentences: sound effects, ambience and dialogue. Write dialogue as "The detective says: Your story has holes." (same source).
+- **Negative prompts:** list unwanted things as plain nouns ("wall, frame"), not "no walls" (same source).
+- Example: "Slow dolly-in, eye level, 35mm. An old ferryman coils rope on a wooden jetty at dawn, mist on the river. Muted film colour, soft grain. Audio: water lapping, distant gulls, no music."
+
+**Omni Flash 1.2** (from a practitioner guide that follows Google's documentation; check Flow's own help as it updates):
+
+- Write a short shot brief in plain sentences: subject and action first, then scene, camera and light, then audio. Always describe the audio; silence has to be asked for.
+- 15 seconds can hold a small beginning, middle and end: say what happens first and what follows.
+- Up to six reference images per request; give each one job, in words.
+- There's no negative-prompt field, so put exclusions in the prompt.
+- Approve a landscape take first, then ask for the vertical version as a follow-up.
+- Weak spots: fast sports action, complex physics, non-English on-screen text ([Morphic](https://morphic.com/resources/how-to/gemini-omni-flash-1-2-guide)).
+
+**Editing a clip with Omni:** name only the change in one short sentence and end with "Keep everything else the same." Make one change per turn, and branch from the last good version if a turn goes wrong. Tie timed changes to an on-screen event ("when the door opens, the lights go out"), describe the result rather than how to composite it, and put any on-screen text in quotes ([fal](https://fal.ai/learn/tools/how-to-edit-videos-with-gemini-omni-flash)).
+
+### Continuity from clip to clip
+
+1. **Same Character, every shot:** create it once in Flow (1–2 images plus a voice) and call it with `@name`.
+2. **Chain frames:** export the last frame of clip A and use it as the first frame of clip B, so position, light and wardrobe carry over.
+3. **Extend instead of regenerate** when a shot needs more time: Omni Extend adds 3–10 s per turn, up to about 30 s in total ([Morphic](https://morphic.com/resources/how-to/gemini-omni-flash-1-2-guide)). Inside an extension prompt, 0 s means the start of the new footage.
+4. **Keep the style block and the grade** identical across every clip (section 5).
+5. **Cut on action:** put the edit point in the middle of a movement, so small differences between two clips are hidden by the motion.
 
 ## 5. Keeping one style across shots, videos and projects
 
@@ -169,7 +252,7 @@ Consistency comes from fixed inputs, not from luck. Decide the look once, write 
 
 **3. Generate stills first, then animate**
 
-Make every keyframe with Nano Banana using the style block and references, approve it, then animate with Veo frames-to-video or ingredients. Google's own workflow is to create keyframes with Nano Banana and let Veo generate the motion between them ([Nano Banana guide](https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana)). It is much cheaper to reject a still than a clip.
+Make every keyframe with Nano Banana using the style block and references, approve it, then animate it with Omni Flash 1.2 or Veo 3.1 Lite from first frames or ingredients. Google's own workflow is to create keyframes with Nano Banana and let the video model generate the motion between them ([Nano Banana guide](https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana)). It is much cheaper to reject a still than a clip. For recurring people, build a Flow Character (1–2 images plus a voice) from your character sheet and call it with `@name` in every prompt ([Flow Help](https://support.google.com/labs/answer/16935308)).
 
 **4. Label references by role in the prompt**
 

@@ -20,10 +20,10 @@ One-time per computer: every local Claude Code session (terminal, desktop app, V
 | File | What it is |
 | --- | --- |
 | `SKILL.md` | Skill entry point (tells Claude what to read) |
-| `AGENT_INDEX.md` | Compact index (~2.9k tokens), section pointers like [§3] |
+| `AGENT_INDEX.md` | Compact index (~3.8k tokens), section pointers like [§3] |
 | `DIRECTORY.md` | Full directory, sections 0–13 |
 | `resources.json` | Every linked source with its section |
-| `evals/questions.json` | 42 test questions (10 held out) the index must answer, plus a token budget |
+| `evals/questions.json` | 59 test questions (15 held out) the index must answer, plus a token budget |
 | `scripts/eval_index.py`, `scripts/check_links.py`, `scripts/check_structure.py` | Run the evals; check every link; check the skill's structure |
 
 Quality checks:

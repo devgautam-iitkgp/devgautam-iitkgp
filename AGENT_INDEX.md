@@ -3,8 +3,8 @@
 Compact index of `DIRECTORY.md` (researched Nov 2026): AI narration/TTS, Flow/Veo/Nano Banana visuals, documentary scriptwriting, sound design and mixing for long videos. [§N] = section N there, with sources. Models and prices change monthly: check the linked source before relying on a number.
 
 ## DECIDE (start here)
-- Narration flat/robotic → engine + voice choice [§1], then delivery controls [§2]. Takes inconsistent or joins audible → [§3].
-- Stills rotated, reframed, sparkle mark, references lost between projects → quirks table [§4]. Style/character drift → [§5]. Looks AI → [§6].
+- Narration flat/robotic → engine + voice choice [§1], then delivery controls and voice settings [§2]. A line still wrong → direct it with your own voice (Actor Mode, Voice Changer) [§2]. Takes inconsistent, artefacts, or joins audible → [§3].
+- Which video model now (retirements Dec 5, 2026) → model table [§4]. Stills rotated, reframed, sparkle mark, references lost between projects → quirks table [§4]. Veo/Omni prompting, edits, clip continuity → [§4]. Style/character drift → [§5]. Looks AI → [§6].
 - Story feels like a list of facts → structure [§7]; narration hard to listen to → writing for the ear [§8].
 - Long video sounds thin/tiring → sound design [§9], music [§10]; levels jump or music drowns voice → [§10][§11].
 - Automating any of it → [§12]. Publishing/growth → YouTube directory (skill `youtube-growth`).
@@ -13,7 +13,7 @@ Compact index of `DIRECTORY.md` (researched Nov 2026): AI narration/TTS, Flow/Ve
 ## §1 Engine and voice
 - Eleven v4 (Sept 28, 2026): steadier voice over long projects, 90+ languages, up to 10,000 chars per generation, audio tags, speed 0.7–1.2; no SSML break tags; ~$80 per million chars API list.
 - Eleven v3: very expressive, more take-to-take variation; stability slider matters most. Multilingual v2: calm, predictable, good with numbers, supports `<break>`.
-- Gemini 3.8 Flash TTS: long-form stability, 130 languages, voice design from text, style instructions + inline tags; SynthID watermark.
+- Gemini 3.8 Flash TTS: long-form stability, 130 languages, voice design from text, turn-level style + inline angle-bracket tags; SynthID watermark.
 - OpenAI gpt-4o-mini-tts: cheap, `instructions` field, preset voices only (no cloning), 2,000-token input.
 - Pick the voice for the script: audition 3–5 voices on a 60 s passage with a name, a number, an emotional line.
 - Cloning: instant 1–2 min audio; professional 30–180 min, own voice only; clone copies your performance (record in the delivery you want); clones can't be exported.
@@ -24,10 +24,13 @@ Compact index of `DIRECTORY.md` (researched Nov 2026): AI narration/TTS, Flow/Ve
 - ElevenLabs v4: ellipses add pause/weight; CAPITALS add emphasis (one word per sentence max).
 - Normalise text yourself: numbers, dates, currency, units, URLs, abbreviations written as spoken ("$42.50" → "forty-two dollars and fifty cents").
 - Pronunciation: phonetic spelling; IPA in slashes on v3/v4 (~80–90% consistent); pronunciation dictionaries; phoneme tags (CMU Arpabet) only on Flash v2.
-- Pauses: v2 `<break time="1.5s" />` up to 3 s (too many = instability); Gemini `[short pause]`, `[long pause]`; v3/v4 punctuation and line breaks.
-- Gemini tags: `[slow]`, `[fast]`, `[cautious]`, `[awe]`, `[seriousness]` (200+); no emphasis tag, use `[slow]` before key words; tags English-only, never two adjacent; a cheaper model can add tags for long scripts.
+- Pauses: v2 `<break time="1.5s" />` up to 3 s, max 2–3 per paragraph (too many = instability); Gemini 3.8 `<short pause>`, `<long pause>`; v3/v4 punctuation and line breaks.
+- Gemini 3.8 changed syntax: text is read strictly as transcript (stage directions get spoken); turn delivery (emotion, pace, volume) goes in `speech_metadata.style`; momentary events inline in angle brackets `<laugh>`, `<sigh>`, `<breath>`; emphasis = CAPITALS + punctuation; split turns where delivery changes. Square-bracket tags (`[slow]`, `[cautious]`) were the 3.1 preview.
+- Gemini: long "Audio Profile"/"Director's Notes" blocks are the main cause of voice drift → design the voice once (Voice design), reuse its ID, test with empty style, keep fixed traits out of style.
 - ElevenLabs tags: `[whispers]`, `[sighs]`, `[curious]`; describe voice quality explicitly (`[low, gravelly voice]`); low stability = more responsive, less consistent.
 - Few tags per minute in documentary narration; tags added last.
+- ElevenLabs settings: stability ~50 (higher = steadier/monotone, lower = livelier/varied), similarity ~75 (not on v3; high similarity copies noise from a poor clone), style 0, speed 1.0, v4 PVC Clone Strength start 0%. Same settings for the whole video.
+- Direct with your own voice: Actor Mode in ElevenLabs Studio (record/upload a guide read for selected text); Voice Changer (speech-to-speech) keeps tone/cadence/emotion, fixes pronunciation, < 5 min and < 50 MB per file, 1,000 characters of credit per minute; be expressive, set gain, Remove Background Noise, your accent carries over. Workflow: TTS everything, redo the 10–20 key lines with your own read.
 
 ## §3 Picking and fixing takes
 - Not deterministic: generate several takes of key lines, choose by fixed criteria, lock approved.
@@ -38,18 +41,25 @@ Compact index of `DIRECTORY.md` (researched Nov 2026): AI narration/TTS, Flow/Ve
 - Reject a take for: accuracy (skipped/added/misread words), wrong stress, continuity jumps, sing-song or announcer cadence, artefacts (clicks, metallic, odd breaths, accent shift).
 - Fix in edit: splice on consonant or breath with 5–20 ms crossfade; replace whole sentences if tone differs; keep natural breaths; room tone under joins.
 - Automated QA: speech-to-text the narration and diff against the script before listening.
+- Problem → fix: speeds up/artefacts = too many breaks; stage directions spoken = move to tags/style, cut in edit; tag becomes sound effect = describe voice quality; drift = same voice/settings, stitching, short Gemini style; clone pace wrong = re-record longer continuous samples; monotone = lower stability, rewrite; trailer voice = raise stability, fewer tags; hiss = clean samples or lower similarity.
+- Blind listening test: same 45–60 s passage, 2 takes per candidate, loudness-matched, renamed, phone + earbuds, score 1–5, two outside listeners pick; freeze the winner's settings.
 
 ## §4 Flow, Veo, Nano Banana
-- Nano Banana Pro is Flow's default; up to 14 reference images (6 high fidelity); 1K/2K/4K; ratios 1:1–21:9.
-- Veo 3.1 (Lite/Fast/full): 4, 6, 8 s clips; Ingredients to Video 8 s only; Fast can't extend or edit video-to-video.
-- Gemini Omni Flash (May 19, 2026): mixed-input video + conversational editing, 10 s; Omni 1.2 Flash 15 s.
-- Flow: asset grid, collections, Characters, `@` asset search, Scenebuilder, Flow Agent, Flow Tools (Character Arc, Nov 2026).
-- Rotated stills: reported sideways/rotated outputs; likely EXIF orientation on phone photos → rotate pixels and re-export before upload, state "upright, 16:9" in prompt, check before animating.
+- Flow models (late Nov 2026): Omni Flash 1.2 recommended (3–10 s free, 3–15 s paid; Omni Extend +3–10 s per turn up to ~30 s, paid/web; 360p = 1/3 cost of 720p, upscale 1080p or 4K on Ultra). Veo 3.1 Lite stays (4/6/8 s, ingredients 8 s, no extend). Veo 3.1 Fast, Veo 3.1 Quality and Omni Flash 1.1 retire Dec 5, 2026; Veo Extend retired Nov 5, 2026.
+- Nano Banana: Pro (Ultra default), 2.1 (standard), 2 Lite (free default); up to 14 reference images (6 high fidelity); 1K–4K; ratios 1:1–21:9.
+- Credits: AI Pro 1,000/month, Ultra 10,000 or 25,000, everyone 50/day; Omni 1.2 ~1 credit/s at 360p, ~3/s at 720p (third-party summary). Draft at 360p, upscale keepers.
+- Flow: asset grid, collections, Characters, `@` insertion, Scenebuilder, Flow Agent, Flow Tools (Character Arc, Nov 2026).
+- Rotated stills: reported sideways/rotated outputs; likely EXIF orientation tag on phone photos (pixels stored sideways) — Google's Vision API advice is remove EXIF orientation or rotate before sending → rotate pixels and re-export, state "upright, 16:9" in prompt, check before animating. Not confirmed by Google for Nano Banana.
 - Aspect/framing drift: auto mode matches input or falls back to 1:1 → set ratio explicitly; Auto-Align Layers and mask edits.
-- References don't carry across projects (assets/Characters live in a project) → master reference kit outside Flow, upload per project, or one long-running series project.
+- Characters bundle face, clothing and voice, called with `@name`, but live inside a project → master reference kit outside Flow; rebuild the Character per project from the same 1–2 images and voice, or one long-running series project.
 - Sparkle mark: Media Watermark toggle in Gemini and Flow since Aug 14, 2026 (not where law requires); SynthID and C2PA always stay; AI Studio with paid key has no visible mark. Turn off before making frames for video; never strip SynthID; still disclose realistic AI.
 - Ingredients: name each one's role; location/style refs without extra people; consistent look across ingredients. Voice reference only with ingredients, one per generation.
 - Generate 2–4 outputs per shot. Scenebuilder sequences must be downloaded and uploaded in YouTube Studio.
+- Omni edits re-render the whole clip; old angle-bracket reference tags deprecated in 1.2 (describe references in words); editing/extending uploaded footage unavailable in EEA, Switzerland, UK.
+- Veo prompting: subject, action, scene, style, temporal, cinematic terms; camera words (eye-level, low/high angle, Dutch, POV; static, pan, tilt, dolly, truck, crane, handheld, whip pan, arc; telephoto, rack focus); audio in separate sentences, dialogue as "The detective says: ..."; negative prompts as plain nouns ("wall, frame"), not "no".
+- Omni prompting: short shot brief, subject + action first, always describe audio (silence must be asked for), 15 s = beginning/middle/end, up to 6 reference images each with one job, no negative field, landscape first then vertical; weak at fast action, physics, non-English text.
+- Omni edits: one short sentence naming only the change + "Keep everything else the same."; one change per turn; branch from last good turn; tie timed changes to on-screen events; on-screen text in quotes.
+- Continuity: same Character via `@name`; last frame of clip A = first frame of clip B; extend instead of regenerate; same style block and grade; cut on action.
 
 ## §5 One style across shots and projects
 - Style bible: 40–80 word style block pasted unchanged into every prompt; palette; camera rules; positive phrasing ("empty street").

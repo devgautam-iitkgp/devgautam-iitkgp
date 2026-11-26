@@ -1,5 +1,5 @@
 {
- "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md (case-insensitive). heldout=true questions were written after the index was finished and were not used to edit it. Keyword presence is a proxy, not proof the answer is complete.",
+ "note": "Code-graded: a question passes when every must_match regex is found in AGENT_INDEX.md (case-insensitive). heldout=true questions were written after the index was finished and were not used to edit it. Keyword presence is a proxy, not proof the answer is complete. v05, v16 and v18 were reworded on 2026-11-26 after deliberate content corrections (Gemini 3.8 tag syntax, Flow Characters, model table); v33-v44 and h11-h15 were added with the narration and Flow/Veo expansion.",
  "max_tokens": 4000,
  "questions": [
   {
@@ -38,8 +38,8 @@
    "id": "v05",
    "q": "Gemini TTS tags for pace and pauses",
    "must_match": [
-    "\\[slow\\]",
-    "\\[long pause\\]"
+    "<long pause>",
+    "speech_metadata\\.style"
    ]
   },
   {
@@ -127,7 +127,7 @@
    "q": "Use the same character across Flow projects",
    "must_match": [
     "reference kit",
-    "across projects"
+    "per project"
    ]
   },
   {
@@ -141,8 +141,8 @@
    "id": "v18",
    "q": "Veo 3.1 clip lengths",
    "must_match": [
-    "4, 6, 8 s",
-    "8 s only"
+    "4/6/8 s|4, 6, 8 s",
+    "ingredients 8 s|8 s only"
    ]
   },
   {
@@ -333,6 +333,140 @@
    "q": "What to do with whooshes",
    "must_match": [
     "remove half"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "v33",
+   "q": "A line's emphasis keeps landing wrong even with tags",
+   "must_match": [
+    "Actor Mode",
+    "Voice Changer"
+   ]
+  },
+  {
+   "id": "v34",
+   "q": "Voice Changer input limits",
+   "must_match": [
+    "5 min",
+    "50 MB"
+   ]
+  },
+  {
+   "id": "v35",
+   "q": "Recommended ElevenLabs stability and similarity for narration",
+   "must_match": [
+    "stability ~50",
+    "similarity ~75"
+   ]
+  },
+  {
+   "id": "v36",
+   "q": "Gemini 3.8 TTS pause tag syntax",
+   "must_match": [
+    "<short pause>",
+    "speech_metadata"
+   ]
+  },
+  {
+   "id": "v37",
+   "q": "Gemini voice drifts between turns",
+   "must_match": [
+    "Director's Notes",
+    "Voice design"
+   ]
+  },
+  {
+   "id": "v38",
+   "q": "Which Flow video models are retiring?",
+   "must_match": [
+    "Dec 5, 2026",
+    "Omni Flash 1\\.2"
+   ]
+  },
+  {
+   "id": "v39",
+   "q": "How to extend a clip in Flow now",
+   "must_match": [
+    "Omni Extend",
+    "Veo Extend retired"
+   ]
+  },
+  {
+   "id": "v40",
+   "q": "Veo negative prompt phrasing",
+   "must_match": [
+    "plain nouns"
+   ]
+  },
+  {
+   "id": "v41",
+   "q": "Omni edit changes things I didn't ask for",
+   "must_match": [
+    "Keep everything else the same",
+    "one change per turn"
+   ]
+  },
+  {
+   "id": "v42",
+   "q": "Keep a character consistent across clips in Flow",
+   "must_match": [
+    "@name",
+    "last frame"
+   ]
+  },
+  {
+   "id": "v43",
+   "q": "Narration speeds up and adds noises",
+   "must_match": [
+    "too many breaks"
+   ]
+  },
+  {
+   "id": "v44",
+   "q": "How to fairly compare TTS voices",
+   "must_match": [
+    "[Bb]lind listening test",
+    "loudness-matched"
+   ]
+  },
+  {
+   "id": "h11",
+   "q": "Flow credits on Google AI Pro",
+   "must_match": [
+    "1,000"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h12",
+   "q": "Does my accent carry over in voice conversion?",
+   "must_match": [
+    "accent carries over"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h13",
+   "q": "Can I edit uploaded footage with Omni in the UK?",
+   "must_match": [
+    "EEA"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h14",
+   "q": "How to write dialogue in a Veo prompt",
+   "must_match": [
+    "says:"
+   ],
+   "heldout": true
+  },
+  {
+   "id": "h15",
+   "q": "Cloned voice pacing is wrong",
+   "must_match": [
+    "continuous samples"
    ],
    "heldout": true
   }
