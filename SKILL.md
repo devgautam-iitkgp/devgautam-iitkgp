@@ -10,5 +10,6 @@ description: Directory for building and growing a YouTube channel - how recommen
 3. YouTube changes thresholds, policies and features often. Before telling someone a number, date or rule, open the source linked in that section (or search) and say how current it is.
 4. Never publish, delete or change monetisation settings on someone's channel without their explicit approval (see §13 for agent rules).
 5. For scheduling, hooks and subagents that run these workflows, see the sister skill `claude-automation-patterns`.
+6. For deep production craft (AI narration and TTS, Flow/Veo/Nano Banana, documentary scripts, sound and mixing), see the sister skill `video-craft`.
 
 Loads in local Claude Code sessions only (not claude.ai/code cloud sessions or Cowork). Update this skill: `git -C ~/.claude/skills/youtube-growth pull`

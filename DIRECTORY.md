@@ -136,6 +136,8 @@ The first 30 seconds decide most of a video's fate, and their job is to confirm 
 
 **Writing for the ear:** short sentences; read every line aloud; cut anything the visuals already show; one idea per sentence. A test on the way: YouTube announced A/B tests of up to three video cuts, aimed at comparing hooks ([YouTube blog, Sep 23, 2026](https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/)).
 
+**Go deeper:** documentary structure, beat sheets, A/V scripts and writing narration for an AI voice are covered in the companion [Video Craft Directory](https://claude.ai/artifact/6GmncC4PDJ8FPVnDmzRp2i), sections 7–8.
+
 ## 5. Production — filming, narration, sound, music, editing
 
 Sound quality matters more than camera quality: viewers sit through an average picture but leave over bad audio. Spend first on a decent microphone, a quiet room and light; a modern phone is a good enough camera to start.
@@ -160,6 +162,8 @@ Sound quality matters more than camera quality: viewers sit through an average p
 **Editing for retention:** cut every pause and repeated line; change something on screen every few seconds in fast formats (B-roll, zoom, graphic, text); use sound effects and music changes to mark new segments; keep the frame clean for mobile. Free tools are enough: DaVinci Resolve, CapCut and the YouTube Create app, which now has a Gemini editing assistant for Shorts ([YouTube blog](https://blog.youtube/news-and-events/new-tools-to-power-your-creation-journey-from-start-to-finish/)). Descript lets you edit by editing the transcript, which suits narrated videos.
 
 **Filming basics:** a big soft light in front of you at about 45°, the camera at eye level, the lens near your eyeline when talking to camera, and a background with some depth. Shoot 4K if you can, so you can punch in during the edit.
+
+**Go deeper:** AI narration (choosing a TTS engine, emphasis, pauses, pronunciation, picking takes) and sound design, music and mixing for long videos are covered in the [Video Craft Directory](https://claude.ai/artifact/6GmncC4PDJ8FPVnDmzRp2i), sections 1–3 and 9–11.
 
 ## 6. Shorts playbook
 
@@ -213,6 +217,8 @@ The "inauthentic content" name dates from July 15, 2025, when the old "repetitio
 - A self-test: watch three of your videos with the sound off. If you can't tell them apart, the channel looks templated.
 
 **Enforcement is real.** Reports say YouTube removed or wiped 16 channels with a combined 35 million subscribers under this policy in January 2026 ([HackerNoon](https://hackernoon.com/youtubes-ai-slop-crackdown-cant-tell-a-directed-ai-film-from-a-bot-farm)). A demonetised channel loses its ad income, so build original value from video one.
+
+**Go deeper:** Flow, Veo and Nano Banana quirks, keeping one visual style across videos, and making AI art not look AI are covered in the [Video Craft Directory](https://claude.ai/artifact/6GmncC4PDJ8FPVnDmzRp2i), sections 4–6.
 
 ## 8. Uploading and discovery settings
 

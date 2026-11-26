@@ -16,13 +16,13 @@ One-time per computer: every local Claude Code session (terminal, desktop app, V
 | `AGENT_INDEX.md` | Compact index (~2.5k tokens), section pointers like [§6] |
 | `DIRECTORY.md` | Full directory, sections 0–15 |
 | `resources.json` | Every linked source with its section |
-| `evals/questions.json` | 37 test questions (10 held out) the index must answer, plus a token budget |
-| `scripts/eval_index.py`, `scripts/check_links.py` | Run the evals; check every link |
+| `evals/questions.json` | 38 test questions (10 held out) the index must answer, plus a token budget |
+| `scripts/eval_index.py`, `scripts/check_links.py`, `scripts/check_structure.py` | Run the evals; check every link; check the skill's structure |
 
-Quality checks: `python3 scripts/eval_index.py AGENT_INDEX.md evals/questions.json` and `python3 scripts/check_links.py resources.json`.
+Quality checks: `python3 scripts/eval_index.py AGENT_INDEX.md evals/questions.json`, `python3 scripts/check_links.py resources.json` and `python3 scripts/check_structure.py`.
 
 Also available as a Claude doc: https://claude.ai/artifact/2Lq8sVePp9rNjqE8Eouva6
 
-Sister directories: [Claude automation patterns](https://github.com/devgautam-iitkgp/devgautam-iitkgp/tree/claude-automation) and [Blender + Claude MCP](https://github.com/devgautam-iitkgp/devgautam-iitkgp/tree/blender-claude-mcp).
+Sister directories: [Video craft](https://github.com/devgautam-iitkgp/devgautam-iitkgp/tree/video-craft) (AI narration, AI visuals, documentary scripts, sound), [Claude automation patterns](https://github.com/devgautam-iitkgp/devgautam-iitkgp/tree/claude-automation) and [Blender + Claude MCP](https://github.com/devgautam-iitkgp/devgautam-iitkgp/tree/blender-claude-mcp).
 
 This is a summary of public sources, not legal or financial advice.

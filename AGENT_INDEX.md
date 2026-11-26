@@ -8,6 +8,7 @@ Compact index of `DIRECTORY.md` (researched Nov 2026). [§N] = section N there, 
 - Shorts or long-form? Shorts = cheap discovery, low pay; long-form = income. Link each Short to a long video [§6].
 - Faceless / AI channel → allowed if original; templated or reused = demonetised [§7].
 - Money → YPP tiers, 2027 change, other streams [§10]. Strike or claim → [§12]. Automating with agents/APIs → [§13].
+- Deep production craft (AI narration/TTS delivery and takes, Flow/Veo/Nano Banana quirks, documentary scripts, sound design and mixing) → sister skill `video-craft` (Video Craft Directory).
 
 ## §1 How recommendations work
 - Ranked per viewer when they open the app, for long-term satisfaction; nothing is "pushed" to subscribers. ~90% of subscribers skip even your best videos (Todd Beaupré, Sep 2026).
